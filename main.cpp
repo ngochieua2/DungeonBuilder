@@ -7,8 +7,8 @@ int main()
 {
 
     MenuInterface menu;
-    menu.welcome(cout, cin);
-    menu.mainMenu(cout, cin);
+    menu.welcome(cout, cin,"app game","hieu");
+    menu.run(cout, cin);
 
     return 0;
 }
