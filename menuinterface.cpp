@@ -34,7 +34,6 @@ bool MenuInterface::mainMenu(ostream &output, istream &input){
         case 'r':
             viewMenu(output, input);
             return true;
-
             break;
     case 'q':
        while (true){
@@ -69,7 +68,7 @@ void MenuInterface::viewMenu(ostream &output, istream &input){
         output << " (v)iew the dungeon level" << endl;
         output << " (r)eturn to the main menu" << endl;
 
-       char a;
+        char a;
         input >> a;
         if (a == 'd'){
             output << "Event for describe\n" << endl;
