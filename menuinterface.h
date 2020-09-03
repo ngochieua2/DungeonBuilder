@@ -9,6 +9,7 @@ class MenuInterface
 {
 public:
     MenuInterface();
+    ~MenuInterface();
     void welcome(ostream &output, istream &input, string title, string author);
     bool mainMenu(ostream &output, istream &input);
     void viewMenu(ostream &output, istream &input);

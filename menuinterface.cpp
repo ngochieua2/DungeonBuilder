@@ -3,9 +3,8 @@
 
 using namespace std;
 
-MenuInterface::MenuInterface(){
-
-}
+MenuInterface::MenuInterface(){}
+MenuInterface::~MenuInterface(){};
 
 void MenuInterface::welcome(ostream &output, istream &input, string title, string author){
     // Intro
