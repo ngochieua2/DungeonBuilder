@@ -1,5 +1,6 @@
 #include "menuinterface.h"
 #include <ostream>
+#include <string>
 
 using namespace std;
 
@@ -22,43 +23,45 @@ bool MenuInterface::mainMenu(ostream &output, istream &input){
     output << " (r)andom dungeon level" << endl;
     output << " (q)uit" << endl;
 
-    char a;
+    std::string a;
     input >> a;
-    switch (a) {
-        case 'g':
-            output << "Creating Example Dungeon Level..." << endl;
-            output << "Dungeon level created!\n" << endl;
-            viewMenu(output, input);
-            return true;
-            break;
-        case 'r':
-            viewMenu(output, input);
-            return true;
-            break;
-    case 'q':
+    if ( a == "g"){
+        output << "Creating Example Dungeon Level..." << endl;
+        output << "Dungeon level created!\n" << endl;
+        viewMenu(output, input);
+        return true;
+        //break;
+    }
+    else if (a == "r"){
+        viewMenu(output, input);
+        return true;
+        //break;
+    }
+    else if ( a == "q"){
        while (true){
            output << "*Are you sure you want to quit? (y/n)*" << endl;
            input >> a;
-           if (a == 'y'){
+           if (a == "y"){
                output << "Goodbye!" << endl;
                //quit = true;
                return false;
                break;
            }
-           else if (a == 'n') {
+           else if (a == "n") {
                output << "Return to menu" << endl;
                return true;
                break;
            }
            else output << "Unvalid option, please choose again!\n" << endl;
        }
-       break;
-    default:
+       //break;
+    }
+    else {
         output << "Unvalid option, please choose again!\n" << endl;
         return true;
-        break;
-
     }
+
+
 }
 
 void MenuInterface::viewMenu(ostream &output, istream &input){
@@ -68,20 +71,19 @@ void MenuInterface::viewMenu(ostream &output, istream &input){
         output << " (v)iew the dungeon level" << endl;
         output << " (r)eturn to the main menu" << endl;
 
-        char a;
+        std::string a;
         input >> a;
-        if (a == 'd'){
+        if (a == "d"){
             output << "Event for describe\n" << endl;
         }
-        else if (a == 'v'){
+        else if (a == "v"){
             output << "Event for view\n" << endl;
         }
-        else if (a == 'r'){
+        else if (a == "r"){
             output << "return to the main menu\n" << endl;
             break;
         }
         else output << "Unvalid option, please choose again!\n" << endl;
-
     }
 }
 
@@ -91,12 +93,12 @@ void MenuInterface::explorationMenu(ostream &output, istream &input){
         output << " (d)escribe a room" << endl;
         output << " (r)eturn to to previous menu" << endl;
 
-        char a;
+        string a;
         input >> a;
-        if (a == 'd'){
+        if (a == "d"){
             output << "Event for describe\n" << endl;
         }
-        else if (a == 'r'){
+        else if (a == "r"){
             output << "return to the main menu\n" << endl;
             break;
         }
@@ -107,6 +109,7 @@ void MenuInterface::explorationMenu(ostream &output, istream &input){
 
 void MenuInterface::run(ostream &output, istream &input){
 
+    //mainMenu(output, input);
     while (true) {
         if (!mainMenu(output, input)) break;
     }
