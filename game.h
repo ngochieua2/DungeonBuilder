@@ -1,5 +1,11 @@
 #ifndef GAME_H
 #define GAME_H
+//#include<dungeonlevelbuilder.h>
+
+#include<basicdungeonlevelbuilder.h>
+#include<dungeonlevel.h>
+#include<string>
+
 
 
 class Game
@@ -12,8 +18,8 @@ public:
         return theInstance;
     }
 
-    //setDungeonType(DungeonLevelBuilder)
-    //createExampleLevel()
+    void setDungeonType(DungeonLevelBuilder *builder, std::string type);
+    void createExampleLevel();
     //createRandomLevel(std::string name, int width, int height)
     //displayLevel()
     //double randomDouble()
@@ -24,6 +30,8 @@ private:
     static Game* theInstance;
     Game();
     ~Game();
+    DungeonLevelBuilder *_builder;
+    BasicDungeonLevelBuilder *_Bbuilder;
 
 };
 

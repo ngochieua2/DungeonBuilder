@@ -1,6 +1,7 @@
 #ifndef DUNGEONLEVEL_H
 #define DUNGEONLEVEL_H
 #include<string>
+#include<room.h>
 
 class DungeonLevel
 {
@@ -8,6 +9,9 @@ public:
     DungeonLevel(std::string name, int width, int height);
     //DungeonLevel(const DungeonLevel &other) = default;
     ~DungeonLevel();
+
+    bool addRoom(Room);
+    Room retrieveRoom(int);
 
     int width();
     int height();
