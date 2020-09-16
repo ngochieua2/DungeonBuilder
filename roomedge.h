@@ -4,6 +4,8 @@
 #include<room.h>
 #include<vector>
 
+//class Room;
+
 class RoomEdge
 {
 public:
@@ -11,11 +13,11 @@ public:
     ~RoomEdge();
 
     std::string discription();
-    char displayCharacter(Room::Direction type);
+    char displayCharacter();
     bool isPassage();
 
 private:
-    Room *_room;
+    //Room *_room;
 
 };
 

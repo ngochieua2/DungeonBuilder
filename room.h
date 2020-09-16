@@ -1,6 +1,8 @@
 #ifndef ROOM_H
 #define ROOM_H
 #include<string>
+#include<vector>
+#include<roomedge.h>
 
 class RoomEdge;
 
@@ -18,13 +20,39 @@ public:
     //creature()
     //setCreature
 
+
+
     enum class Direction : unsigned {
         North, South, East, West
     };
 
+
+    void setNorth(RoomEdge edge);
+    void setEast(RoomEdge edge);
+
+    void setSouth(RoomEdge edge);
+
+    void setWest(RoomEdge edge);
+
+    RoomEdge getNorth();
+
+    RoomEdge getEast();
+
+    RoomEdge getSouth();
+
+    RoomEdge getWest();
+
+
+
 private:
     int _id;
-    RoomEdge *roomEdge;
+
+    RoomEdge *_roomEdge;
+
+    std::vector <std::string> _roomVector;
+
+    std::vector <RoomEdge> _Edges;
+
 };
 
 #endif // ROOM_H

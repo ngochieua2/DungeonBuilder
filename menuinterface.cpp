@@ -7,6 +7,8 @@ using namespace std;
 MenuInterface::MenuInterface(){}
 MenuInterface::~MenuInterface(){};
 
+Game* Game::theInstance= nullptr;
+
 void MenuInterface::welcome(ostream &output, istream &input, string title, string author){
     // Intro
     output << "Welcome to: " << title << endl;
@@ -22,6 +24,8 @@ bool MenuInterface::mainMenu(ostream &output, istream &input){
     output << " (g)enerate the example level" << endl;
     output << " (r)andom dungeon level" << endl;
     output << " (q)uit" << endl;
+
+    //Game::getInstance()->test(output);
 
     std::string a;
     input >> a;

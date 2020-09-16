@@ -2,6 +2,7 @@
 #define MENUINTERFACE_H
 #include <ostream>
 #include <istream>
+#include<game.h>
 
 using namespace std;
 

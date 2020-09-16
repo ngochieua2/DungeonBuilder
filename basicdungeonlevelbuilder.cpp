@@ -9,6 +9,6 @@ void BasicDungeonLevelBuilder::buildungeonLevel(std::string name,int width, int 
 
 }
 
-BasicDungeonLevel* BasicDungeonLevelBuilder::getBasicDungeonLevel(){
-    return _BDungeonLevel;
-}
+//Room BasicDungeonLevelBuilder::buildRoom(int id){}
+
+

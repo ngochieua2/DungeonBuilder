@@ -10,10 +10,10 @@ public:
     ~BasicDungeonLevelBuilder();
 
       void buildungeonLevel(std::string name,int width, int height) override;
-      Room buildRoom(int id) override;
-      Room builDoorway(Room origin, Room destination, Room::Direction direction, MoveConstraints constraints) override;
-      void buildEntrance(Room room, Room::Direction direction) override;
-      void buildExit(Room room, Room::Direction direction) override;
+      //Room buildRoom(int id) override;
+      //Room builDoorway(Room origin, Room destination, Room::Direction direction, MoveConstraints constraints) override;
+      //void buildEntrance(Room room, Room::Direction direction) override;
+      //void buildExit(Room room, Room::Direction direction) override;
 
 //    virtual void buildItem(Room) const override;
 //    virtual void buildCreature(Room) const override;
@@ -21,7 +21,7 @@ public:
       BasicDungeonLevel* getBasicDungeonLevel();
 
 private:
-    BasicDungeonLevel *_BDungeonLevel;
+    //BasicDungeonLevel *_BDungeonLevel;
 };
 
 #endif // BASICDUINGEONLEVELBUILDER_H

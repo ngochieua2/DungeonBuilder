@@ -1,7 +1,10 @@
 #include <iostream>
 #include "menuinterface.h"
+#include<game.h>
 
 using namespace std;
+
+
 
 int main()
 {

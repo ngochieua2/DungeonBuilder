@@ -1,13 +1,14 @@
 #include "dungeonlevel.h"
 #include <vector>
 
-std::vector <Room> RoomStore(16);
 
+
+DungeonLevel::~DungeonLevel(){}
 DungeonLevel::DungeonLevel(std::string name, int width, int height): _name{name}, _width{width}, _height{height}
 {
 }
 
-DungeonLevel::~DungeonLevel(){}
+
 
 bool addRoom(Room){}
 
