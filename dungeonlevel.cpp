@@ -1,19 +1,16 @@
 #include "dungeonlevel.h"
-#include <vector>
 
-
+DungeonLevel::DungeonLevel(std::string &name, int &width, int &height): _name{name}, _width{width}, _height{height}
+{}
 
 DungeonLevel::~DungeonLevel(){}
-DungeonLevel::DungeonLevel(std::string name, int width, int height): _name{name}, _width{width}, _height{height}
-{
+
+bool DungeonLevel::addRoom(Room *room){
+    allRoom.push_back(room);
+    return true;
 }
 
-
-
-bool addRoom(Room){}
-
-Room retrieveRoom(int){}
-
+Room retrieveRoom(int i){}
 
 int DungeonLevel::width(){
     return _width;
@@ -27,8 +24,9 @@ int DungeonLevel::numberOfRooms(){
 std::string DungeonLevel::name(){
     return _name;
 }
+
 std::string DungeonLevel::description(){
-    return "-------";
+    return "this is DungeonLevel description";
 }
 
 //std::string[] display();

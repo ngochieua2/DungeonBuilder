@@ -9,4 +9,3 @@ RoomEdge::~RoomEdge(){}
 
 //char RoomEdge::displayCharacter(){}
 
-//bool RoomEdge::isPassage(){}

@@ -12,8 +12,6 @@ SOURCES += \
         dungeonlevelbuilder.cpp \
         game.cpp \
         lockeddoor.cpp \
-        magicaldungeonlevelbuilder.cpp \
-        magicdungeonlevel.cpp \
         main.cpp \
         menuinterface.cpp \
         onewaydoor.cpp \
@@ -31,8 +29,6 @@ HEADERS += \
     dungeonlevelbuilder.h \
     game.h \
     lockeddoor.h \
-    magicaldungeonlevelbuilder.h \
-    magicdungeonlevel.h \
     menuinterface.h \
     onewaydoor.h \
     opendoorway.h \

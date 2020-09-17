@@ -8,6 +8,8 @@ public:
     Wall();
     ~Wall();
 
+    bool isPassage();
+
 
 
 };

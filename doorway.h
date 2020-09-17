@@ -8,10 +8,12 @@ public:
     Doorway();
     ~Doorway();
 
-    void connect (Doorway opposite);
+    void connect (Doorway *opposite);
 
     bool isEntrance();
     bool isExit();
+
+    bool isPassage();
 };
 
 #endif // DOORWAY_H

@@ -3,7 +3,8 @@
 
 #include<dungeonlevelbuilder.h>
 #include<basicdungeonlevelbuilder.h>
-#include<dungeonlevel.h>
+#include<basicdungeonlevel.h>
+//#include<dungeonlevel.h>
 #include<string>
 
 class Game
@@ -26,6 +27,8 @@ public:
     Game(Game const&) = delete;
     void operator = (Game const&) = delete;
 
+
+    DungeonLevel getDungeon();
 
 
 private:

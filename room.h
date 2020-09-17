@@ -27,31 +27,33 @@ public:
     };
 
 
-    void setNorth(RoomEdge edge);
-    void setEast(RoomEdge edge);
+    void setNorth(RoomEdge *edge);
+    void setEast(RoomEdge *edge);
 
-    void setSouth(RoomEdge edge);
+    void setSouth(RoomEdge *edge);
 
-    void setWest(RoomEdge edge);
+    void setWest(RoomEdge *edge);
 
-    RoomEdge getNorth();
+    RoomEdge* getNorth();
 
-    RoomEdge getEast();
+    RoomEdge* getEast();
 
-    RoomEdge getSouth();
+    RoomEdge* getSouth();
 
-    RoomEdge getWest();
+    RoomEdge* getWest();
 
-
+    RoomEdge* getRoomEdge(){
+        return _roomEdge;
+    }
 
 private:
     int _id;
 
     RoomEdge *_roomEdge;
 
-    std::vector <std::string> _roomVector;
+    //std::vector <std::string> _roomVector;
 
-    std::vector <RoomEdge> _Edges;
+    std::vector <RoomEdge*> _EdgesVector;
 
 };
 

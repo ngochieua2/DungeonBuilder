@@ -12,9 +12,9 @@ public:
     RoomEdge();
     ~RoomEdge();
 
-    std::string discription();
+    std::string description();
     char displayCharacter();
-    bool isPassage();
+    virtual bool isPassage();
 
 private:
     //Room *_room;
