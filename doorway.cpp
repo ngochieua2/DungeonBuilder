@@ -1,24 +1,27 @@
 #include "doorway.h"
 
-Doorway::Doorway()
-{
-
-}
+Doorway::Doorway(){}
 
 Doorway::~Doorway(){}
 
-void Doorway::connect (Doorway *opposite){
+void Doorway::connect (Doorway *opposite){}
 
+bool Doorway::isEntrance(){
+    return Entrance;
 }
 
-bool Doorway::isEntrance(){}
+bool Doorway::isExit(){
+    return Exit;
+}
 
-bool Doorway::isExit(){}
+void Doorway::setEntrance(){}
+
+void Doorway::setExit(){}
 
 
 bool Doorway::isPassage(){
-//    if(isEntrance() || isExit()){
-//        return false;
-//    }
+    if(isEntrance() || isExit()){
+        return false;
+    }
     return true;
 }

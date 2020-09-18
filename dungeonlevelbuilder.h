@@ -13,10 +13,10 @@ public:
     enum class MoveConstraints : unsigned;
 
     virtual void buildungeonLevel(std::string name,int width, int height);
-    virtual Room buildRoom(int id);
-    virtual Room builDoorway(Room origin, Room destination, Room::Direction direction, DungeonLevelBuilder::MoveConstraints constraints);
-    virtual void buildEntrance(Room room, Room::Direction direction);
-    virtual void buildExit(Room room, Room::Direction direction);
+    virtual std::shared_ptr<Room> buildRoom(int id);
+    virtual void builDoorway(std::shared_ptr<Room> origin, std::shared_ptr<Room> destination, Room::Direction direction, DungeonLevelBuilder::MoveConstraints constraints);
+    virtual void buildEntrance(std::shared_ptr<Room> room, Room::Direction direction);
+    virtual void buildExit(std::shared_ptr<Room> room, Room::Direction direction);
 
 //    virtual void buildItem(Room);
 //    virtual void buildCreature(Room);

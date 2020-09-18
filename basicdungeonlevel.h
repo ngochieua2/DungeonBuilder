@@ -6,7 +6,7 @@
 class BasicDungeonLevel : public DungeonLevel
 {
 public:
-    BasicDungeonLevel();
+    BasicDungeonLevel(std::string name, int width, int height);
     ~BasicDungeonLevel();
 
     std::string description() override;

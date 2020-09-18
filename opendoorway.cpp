@@ -1,10 +1,18 @@
 #include "opendoorway.h"
 
-OpenDoorWay::OpenDoorWay()
-{
+OpenDoorWay::OpenDoorWay(){}
 
+OpenDoorWay::~OpenDoorWay(){}
+
+
+std::string OpenDoorWay::description(){
+    return "A Open Door ";
 }
 
-char OpenDoorWay::Doorway::RoomEdge::displayCharacter(){
+void OpenDoorWay::setEntrance(){
+    Entrance = false;
+}
 
+void OpenDoorWay::setExit(){
+    Exit = false;
 }

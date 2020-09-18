@@ -9,12 +9,12 @@ class DungeonLevel
 {
 public:
     DungeonLevel() = default;
-    DungeonLevel(std::string &name, int &width, int &height);
+    DungeonLevel(std::string name, int width, int height);
     //DungeonLevel(const DungeonLevel &other) = default;
     virtual ~DungeonLevel();
 
-    bool addRoom(Room *room);
-    Room retrieveRoom(int i);
+    bool addRoom(std::shared_ptr<Room> room);
+    std::shared_ptr<Room> retrieveRoom(int i);
 
     int width();
     int height();
@@ -29,8 +29,9 @@ protected:
     std::string _name;
     int _width;
     int _height;
+
     std::shared_ptr <Room> ptrRoom{};
-    std::vector <Room*> allRoom;
+    std::vector<std::shared_ptr<Room>> allRoom{};
 };
 
 #endif // DUNGEONLEVEL_H
