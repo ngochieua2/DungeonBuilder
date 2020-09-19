@@ -1,8 +1,6 @@
 #include "roomedge.h"
 
-
-RoomEdge::RoomEdge()
-{}
+RoomEdge::RoomEdge(){}
 
 RoomEdge::~RoomEdge(){}
 
@@ -12,10 +10,31 @@ std::string RoomEdge::description()
 }
 
 char RoomEdge::displayCharacter(){
-    return '-';
+    return '?';
 }
 
-bool RoomEdge::isPassage(){}
+bool RoomEdge::isPassage(){
+    return false;
+}
+
+bool RoomEdge::isEntrance(){
+    return false;
+}
+
+bool RoomEdge::isExit()
+{
+    return false;
+}
+
+void RoomEdge::setEntrance(){}
+
+void RoomEdge::setExit(){}
+
+RoomEdge::DoorwayType RoomEdge::getDoorwayType()
+{
+    return DoorwayType::Undefine;
+}
+
 
 
 

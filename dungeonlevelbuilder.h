@@ -20,9 +20,7 @@ public:
 
 //    virtual void buildItem(Room);
 //    virtual void buildCreature(Room);
-    DungeonLevel* getDungeonLevel(){
-        return _Dungeonlevel;
-    };
+    DungeonLevel* getDungeonLevel();
 
     enum class MoveConstraints : unsigned {
         None = 0,
@@ -32,6 +30,7 @@ public:
         DestinationLocked = 8,
     };
 
+    Room::Direction getOppositeDirection(Room::Direction direction);
 
 protected:
     DungeonLevel* _Dungeonlevel;

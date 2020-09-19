@@ -1,6 +1,8 @@
 #include "game.h"
 //#include<string>
 
+using core::Game;
+
 Game::Game(){}
 
 Game::~Game(){};

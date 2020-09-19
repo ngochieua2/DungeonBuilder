@@ -11,7 +11,7 @@ public:
 
     std::string description() override;
 
-    bool isPassage();
+    bool isPassage()override;
 
 
 

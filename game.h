@@ -1,11 +1,13 @@
 #ifndef GAME_H
 #define GAME_H
-
 #include<dungeonlevelbuilder.h>
 #include<basicdungeonlevelbuilder.h>
 #include<basicdungeonlevel.h>
 //#include<dungeonlevel.h>
 #include<string>
+
+namespace core
+{
 
 class Game
 {
@@ -41,4 +43,5 @@ private:
 
 };
 
+}
 #endif // GAME_H

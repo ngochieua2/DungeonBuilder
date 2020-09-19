@@ -8,10 +8,15 @@ DungeonLevel::~DungeonLevel(){}
 
 bool DungeonLevel::addRoom(std::shared_ptr<Room> room){
 
+    allRoom.push_back(room);
     return true;
 }
 
-std::shared_ptr<Room> retrieveRoom(int i){}
+std::shared_ptr<Room> DungeonLevel::retrieveRoom(int i)
+{
+    return allRoom.at(i+1);
+}
+
 
 int DungeonLevel::width(){
     return _width;

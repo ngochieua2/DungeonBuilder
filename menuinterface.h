@@ -4,18 +4,21 @@
 #include <istream>
 #include<game.h>
 
-using namespace std;
+namespace core {
+
+
 
 class MenuInterface
 {
 public:
     MenuInterface();
     ~MenuInterface();
-    void welcome(ostream &output, istream &input, string title, string author);
-    bool mainMenu(ostream &output, istream &input);
-    void viewMenu(ostream &output, istream &input);
-    void explorationMenu(ostream &output, istream &input);
-    void run(ostream &output, istream &input);
+    void welcome(std::ostream &output, std::istream &input, std::string title, std::string author);
+    bool mainMenu(std::ostream &output, std::istream &input);
+    void viewMenu(std::ostream &output, std::istream &input);
+    void explorationMenu(std::ostream &output, std::istream &input);
+    void run(std::ostream &output, std::istream &input);
 };
 
+}
 #endif // MENUINTERFACE_H

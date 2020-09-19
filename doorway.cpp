@@ -40,5 +40,5 @@ bool Doorway::isPassage(){
 }
 
 Doorway::DoorwayType Doorway::getDoorwayType(){
-    return DoorwayType::None;
+    return DoorwayType::Undefine;
 }

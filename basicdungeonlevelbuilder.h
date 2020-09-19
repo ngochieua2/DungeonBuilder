@@ -4,6 +4,9 @@
 #include <basicdungeonlevel.h>
 #include <rockwall.h>
 #include <onewaydoor.h>
+#include <opendoorway.h>
+#include <blockeddoorway.h>
+#include <lockeddoor.h>
 
 class BasicDungeonLevelBuilder : public DungeonLevelBuilder
 {
@@ -21,9 +24,9 @@ public:
 //    void buildCreature(Room) const override;
 
 protected:
-      //RoomEdge *edge;
-      Wall *_wall;
-      Doorway *_door;
+      RoomEdge *_edge;
+      //Wall *_wall{nullptr};
+      //Doorway *_door{nullptr};
 
 };
 
