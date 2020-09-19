@@ -4,6 +4,18 @@ OneWayDoor::OneWayDoor(){}
 
 OneWayDoor::~OneWayDoor(){}
 
+std::string OneWayDoor::description(){
+    if (isEntrance()){
+        return "The Entrance ";
+    }
+    else if (isExit()) {
+        return "The Exit ";
+    }
+    else {
+        return "an One-way Door ";
+    }
+}
+
 void OneWayDoor::setEntrance(){
     Entrance = true;
 }
@@ -12,14 +24,9 @@ void OneWayDoor::setExit(){
     Exit = true;
 }
 
-std::string OneWayDoor::description(){
-    if (OneWayDoor::isEntrance()){
-        return "The Entrance ";
-    }
-    else if (OneWayDoor::isExit()) {
-        return "The Exit ";
-    }
-    else {
-        return "An One-way Door ";
-    }
+Doorway::DoorwayType OneWayDoor::getDoorwayType()
+{
+    return DoorwayType::OneWayDoor;
 }
+
+

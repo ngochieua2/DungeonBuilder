@@ -12,7 +12,7 @@ public:
     RoomEdge();
     ~RoomEdge();
 
-    std::string description();
+    virtual std::string description();
     char displayCharacter();
     virtual bool isPassage();
 

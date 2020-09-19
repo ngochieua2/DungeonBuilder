@@ -1,17 +1,17 @@
 #include "room.h"
-#include<vector>
 
-
-
-Room::Room(int id): _id{id}
-{}
+Room::Room(int id): _id{id}{}
 
 Room::~Room(){
-    delete _roomEdge;
-    for (int i = 0; i < _EdgesVector.size(); ++ i){
-        delete _EdgesVector[i];
+    delete[] _roomEdge;
+    for (int i = 0; i < (int)EdgesVector.size(); ++ i){
+        delete[] EdgesVector[i];
     }
+}
 
+std::string Room::description()
+{
+    return "a room ";
 }
 
 
@@ -19,34 +19,38 @@ int Room::id(){
     return _id;
 }
 
-void Room::setNorth(RoomEdge *edge){
-    _EdgesVector.at(0) = edge;
-};
 
-void Room::setEast(RoomEdge *edge){
-    _EdgesVector.at(1) = edge;
-};
-
-void Room::setSouth(RoomEdge *edge){
-    _EdgesVector.at(2) = edge;
+void Room::setEdge(RoomEdge *edge, Direction direction){
+    if(direction == Direction::North){
+        EdgesVector.at(0) = edge;
+    }
+    else if (direction == Direction::East) {
+        EdgesVector.at(1) = edge;
+    }
+    else if (direction == Direction::South) {
+        EdgesVector.at(2) = edge;
+    }
+    else {
+        EdgesVector.at(3) = edge;
+    }
 }
 
-void Room::setWest(RoomEdge *edge){
-    _EdgesVector.at(3) = edge;
+RoomEdge* Room::edgeAt(Direction direction){
+    if(direction == Direction::North){
+        return EdgesVector.at(0);
+    }
+    else if (direction == Direction::East) {
+        return  EdgesVector.at(1);
+    }
+    else if (direction == Direction::South) {
+        return EdgesVector.at(2);
+    }
+    else {
+        return EdgesVector.at(3);
+    }
 }
 
-RoomEdge* Room::getNorth(){
-    return _EdgesVector.at(0);
+RoomEdge* Room::getRoomEdge(){
+    return _roomEdge;
 }
 
-RoomEdge* Room::getEast(){
-    return _EdgesVector.at(1);
-}
-
-RoomEdge* Room::getSouth(){
-    return _EdgesVector.at(2);
-}
-
-RoomEdge* Room::getWest(){
-    return _EdgesVector.at(3);
-}

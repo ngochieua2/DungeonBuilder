@@ -10,11 +10,14 @@ public:
     BlockedDoorWay();
     ~BlockedDoorWay();
 
-    std::string description();
+    std::string description()override;
 
     void setEntrance() override;
 
     void setExit()override;
+
+    DoorwayType getDoorwayType() override;
+
 };
 
 #endif // BLOCKEDDOORWAY_H

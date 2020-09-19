@@ -2,9 +2,22 @@
 
 Doorway::Doorway(){}
 
-Doorway::~Doorway(){}
+Doorway::~Doorway(){
+    delete [] _doorway;
+}
 
-void Doorway::connect (Doorway *opposite){}
+std::string Doorway::description()
+{
+    return "doorway ";
+}
+
+void Doorway::connect (Doorway *opposite){
+    _doorway = opposite;
+}
+
+Doorway* Doorway::getOpposite(){
+    return _doorway;
+}
 
 bool Doorway::isEntrance(){
     return Entrance;
@@ -24,4 +37,8 @@ bool Doorway::isPassage(){
         return false;
     }
     return true;
+}
+
+Doorway::DoorwayType Doorway::getDoorwayType(){
+    return DoorwayType::None;
 }

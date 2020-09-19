@@ -11,6 +11,7 @@ class Room
 public:
     Room(int id);
     ~Room();
+
     std::string description();
 
     //std::string[] display();
@@ -27,24 +28,12 @@ public:
     };
 
 
-    void setNorth(RoomEdge *edge);
-    void setEast(RoomEdge *edge);
+    void setEdge(RoomEdge *edge, Direction direction);
 
-    void setSouth(RoomEdge *edge);
+    RoomEdge* edgeAt(Direction direction);
 
-    void setWest(RoomEdge *edge);
 
-    RoomEdge* getNorth();
-
-    RoomEdge* getEast();
-
-    RoomEdge* getSouth();
-
-    RoomEdge* getWest();
-
-    RoomEdge* getRoomEdge(){
-        return _roomEdge;
-    }
+    RoomEdge* getRoomEdge();
 
 private:
     int _id;
@@ -53,7 +42,7 @@ private:
 
     //std::vector <std::string> _roomVector;
 
-    std::vector <RoomEdge*> _EdgesVector;
+    std::vector <RoomEdge*> EdgesVector;
 
 };
 

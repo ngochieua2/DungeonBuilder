@@ -15,3 +15,8 @@ void LockedDoor::setEntrance(){
 void LockedDoor::setExit(){
     Exit = false;
 }
+
+Doorway::DoorwayType LockedDoor::getDoorwayType()
+{
+    return DoorwayType::LockedDoorway;
+}

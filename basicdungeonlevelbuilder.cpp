@@ -3,8 +3,8 @@
 BasicDungeonLevelBuilder::BasicDungeonLevelBuilder(){}
 
 BasicDungeonLevelBuilder::~BasicDungeonLevelBuilder(){
-    delete _wall;
-    delete _door;
+    delete[] _wall;
+    delete[] _door;
 }
 
 

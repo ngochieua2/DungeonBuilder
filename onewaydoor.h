@@ -9,11 +9,13 @@ public:
     OneWayDoor();
     ~OneWayDoor();
 
+    std::string description()override;
+
     void setEntrance() override;
 
     void setExit() override;
 
-    std::string description();
+    DoorwayType getDoorwayType()override;
 };
 
 #endif // ONEWAYDOOR_H

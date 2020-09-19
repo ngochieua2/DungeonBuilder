@@ -8,6 +8,8 @@ class RockWall : public Wall
 public:
     RockWall();
     ~RockWall();
+
+    std::string description() override;
 };
 
 #endif // ROCKWALL_H

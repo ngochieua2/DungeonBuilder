@@ -8,7 +8,7 @@ RoomEdge::~RoomEdge(){}
 
 std::string RoomEdge::description()
 {
-    return "this is room edge ";
+    return "roomedge ";
 }
 
 char RoomEdge::displayCharacter(){

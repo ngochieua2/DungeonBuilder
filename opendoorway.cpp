@@ -6,7 +6,7 @@ OpenDoorWay::~OpenDoorWay(){}
 
 
 std::string OpenDoorWay::description(){
-    return "A Open Door ";
+    return "an Open Door ";
 }
 
 void OpenDoorWay::setEntrance(){
@@ -15,4 +15,9 @@ void OpenDoorWay::setEntrance(){
 
 void OpenDoorWay::setExit(){
     Exit = false;
+}
+
+Doorway::DoorwayType OpenDoorWay::getDoorwayType()
+{
+    return DoorwayType::OpenDoorway;
 }
