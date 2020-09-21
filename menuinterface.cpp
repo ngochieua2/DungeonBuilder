@@ -33,7 +33,9 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
         output << "Creating Example Dungeon Level..." << std::endl;
         output << "Dungeon level created!\n" << std::endl;
 
-        //Game::getInstance()->createExampleLevel();
+        Game::getInstance()->createExampleLevel();
+
+        output << Game::getInstance()->getDungeon()->description();
 
         viewMenu(output, input);
         return true;
@@ -83,7 +85,7 @@ void MenuInterface::viewMenu(std::ostream &output, std::istream &input){
         if (a == "d"){
             output << "Event for describe\n" << std::endl;
 
-            //output << Game::getInstance()->getDungeon().width();
+            output << Game::getInstance()->getDungeon()->name();
 
         }
         else if (a == "v"){

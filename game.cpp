@@ -3,24 +3,29 @@
 
 using core::Game;
 
-Game::Game(){}
+Game::Game(){
+}
 
-Game::~Game(){};
+Game::~Game(){
+    delete _builder;
+    delete dungeon;
+};
 
-void Game::setDungeonType(DungeonLevelBuilder *builder, std::string type){
+void Game::setDungeonType(std::string type){
     if (type == "basic"){
-        builder = new BasicDungeonLevelBuilder();
+        _builder = new BasicDungeonLevelBuilder();
     }
 }
 
 void Game::createExampleLevel(){
-    setDungeonType(_builder, "basic");
-    _builder->buildungeonLevel("Example Dungeon Level", 3 , 3);
+    //setDungeonType("basic");
+    _builder = new BasicDungeonLevelBuilder();
+    _builder->buildungeonLevel("Example Dungeon Level", 1 , 1);
 
     dungeon = _builder->getDungeonLevel();
 
 }
 
-DungeonLevel Game::getDungeon(){
-    return *dungeon;
+DungeonLevel* Game::getDungeon(){
+    return dungeon;
 }

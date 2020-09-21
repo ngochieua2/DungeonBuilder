@@ -1,8 +1,10 @@
 #include "dungeonlevel.h"
 
-DungeonLevel::DungeonLevel(std::string name, int width, int height): _name{name}, _width{width}, _height{height}
-{
-}
+DungeonLevel::DungeonLevel()
+{}
+
+DungeonLevel::DungeonLevel(std::string &name, int &width, int &height): _name{name}, _width{width}, _height{height}
+{}
 
 DungeonLevel::~DungeonLevel(){}
 
@@ -14,7 +16,7 @@ bool DungeonLevel::addRoom(std::shared_ptr<Room> room){
 
 std::shared_ptr<Room> DungeonLevel::retrieveRoom(int i)
 {
-    return allRoom.at(i+1);
+    return allRoom.at(i-1);
 }
 
 

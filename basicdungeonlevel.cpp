@@ -1,6 +1,9 @@
 #include "basicdungeonlevel.h"
 
-BasicDungeonLevel::BasicDungeonLevel(std::string name, int width, int height){
+
+
+BasicDungeonLevel::BasicDungeonLevel(std::string &name, int &width, int &height)
+{
     _name = name;
     _width = width;
     _height = height;
@@ -9,6 +12,7 @@ BasicDungeonLevel::BasicDungeonLevel(std::string name, int width, int height){
 BasicDungeonLevel::~BasicDungeonLevel(){}
 
 std::string BasicDungeonLevel::description(){
-    return name() + "\nSize: " + std::to_string(width()) + " x " +
-            std::to_string(height()) + "Type: Basic Dungeon";
+    return _name +
+            "\nSize: " + std::to_string(_width) + " x " + std::to_string(_height) +
+            "\nType: Basic Dungeon\n";
 }

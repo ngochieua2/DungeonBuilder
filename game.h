@@ -1,9 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
-#include<dungeonlevelbuilder.h>
 #include<basicdungeonlevelbuilder.h>
 #include<basicdungeonlevel.h>
-//#include<dungeonlevel.h>
 #include<string>
 
 namespace core
@@ -20,7 +18,7 @@ public:
     }
 
 
-    void setDungeonType(DungeonLevelBuilder *builder, std::string type);
+    void setDungeonType(std::string type);
     void createExampleLevel();
     //createRandomLevel(std::string name, int width, int height)
     //displayLevel()
@@ -30,7 +28,7 @@ public:
     void operator = (Game const&) = delete;
 
 
-    DungeonLevel getDungeon();
+    DungeonLevel* getDungeon();
 
 
 private:
