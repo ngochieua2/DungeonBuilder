@@ -6,7 +6,12 @@ QuartzChamber::QuartzChamber(int id)
     EdgesVector.assign(4,_roomEdge);
 }
 
-QuartzChamber::~QuartzChamber(){}
+QuartzChamber::~QuartzChamber(){
+    delete[] _roomEdge;
+    for (int i = 0; i < (int)EdgesVector.size(); ++ i){
+        delete[] EdgesVector[i];
+    }
+}
 
 std::string QuartzChamber::description(){
     return "A chamber that glitters like a thousand stars in the tourch light. (Quartz Chaber)\n"

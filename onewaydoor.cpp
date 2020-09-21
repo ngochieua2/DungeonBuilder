@@ -6,13 +6,13 @@ OneWayDoor::~OneWayDoor(){}
 
 std::string OneWayDoor::description(){
     if (isEntrance()){
-        return "The Entrance ";
+        return "The Entrance to the dungeon level ";
     }
     else if (isExit()) {
-        return "The Exit ";
+        return "The Exit of the dungeon level ";
     }
     else {
-        return "an One-way Door ";
+        return "an One-way Door to another chamber ";
     }
 }
 

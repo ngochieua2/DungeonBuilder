@@ -47,8 +47,8 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
 
     }
     //condition and build an onewaydoor from origin to destination
-    else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::OriginImpassable)|
-                                     static_cast<unsigned>(MoveConstraints::None))){
+    else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::None)|
+                                     static_cast<unsigned>(MoveConstraints::DestinationImpassable))){
         _edge = new OneWayDoor();
         origin->setEdge(_edge,direction);
         //set connect
@@ -57,8 +57,8 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
 
     }
     //condition and build an onewaydoor from destination to origin
-    else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::None)|
-                                     static_cast<unsigned>(MoveConstraints::DestinationImpassable))){
+    else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::OriginImpassable)|
+                                     static_cast<unsigned>(MoveConstraints::None))){
         _edge = new BlockedDoorWay();
         origin->setEdge(_edge,direction);
         //set connect
@@ -83,6 +83,26 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
         origin->setEdge(_edge,direction);
         //set connect
         _edge = new LockedDoor();
+        destination->setEdge(_edge, getOppositeDirection(direction));
+
+    }
+    //condition and build an one way doorway in origin and a locked doorway in destination
+    else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::None)|
+                                     static_cast<unsigned>(MoveConstraints::DestinationLocked))){
+        _edge = new OneWayDoor();
+        origin->setEdge(_edge,direction);
+        //set connect
+        _edge = new LockedDoor();
+        destination->setEdge(_edge, getOppositeDirection(direction));
+
+    }
+    //condition and build a locked door in origin and an one way door in destination
+    else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::OriginLocked)|
+                                     static_cast<unsigned>(MoveConstraints::None))){
+        _edge = new LockedDoor();
+        origin->setEdge(_edge,direction);
+        //set connect
+        _edge = new OneWayDoor();
         destination->setEdge(_edge, getOppositeDirection(direction));
 
     }

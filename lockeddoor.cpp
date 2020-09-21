@@ -5,7 +5,7 @@ LockedDoor::LockedDoor(){}
 LockedDoor::~LockedDoor(){}
 
 std::string LockedDoor::description(){
-    return "A Locked Door ";
+    return "A Locked Door to another chamber";
 }
 
 void LockedDoor::setEntrance(){

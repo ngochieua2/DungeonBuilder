@@ -6,7 +6,7 @@ OpenDoorWay::~OpenDoorWay(){}
 
 
 std::string OpenDoorWay::description(){
-    return "an Open Door ";
+    return "an Open Door to another chamber";
 }
 
 void OpenDoorWay::setEntrance(){

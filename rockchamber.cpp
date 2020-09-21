@@ -7,7 +7,12 @@ RockChamber::RockChamber(int id)
     EdgesVector.assign(4,_roomEdge);
 }
 
-RockChamber::~RockChamber(){}
+RockChamber::~RockChamber(){
+    delete[] _roomEdge;
+    for (int i = 0; i < (int)EdgesVector.size(); ++ i){
+        delete[] EdgesVector[i];
+    }
+}
 
 std::string RockChamber::description(){
     return "A chamber that glitters like a thousand stars in the tourch light. (Rock Chamber)\n"
