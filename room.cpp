@@ -1,6 +1,10 @@
 #include "room.h"
 
-Room::Room(int id): _id{id}{}
+Room::Room(){}
+
+Room::Room(int id): _id{id}{
+    EdgesVector.assign(4,_roomEdge);
+}
 
 Room::~Room(){
     delete[] _roomEdge;
@@ -11,7 +15,7 @@ Room::~Room(){
 
 std::string Room::description()
 {
-    return "a room ";
+    return "a room\n";
 }
 
 
@@ -53,4 +57,17 @@ RoomEdge* Room::edgeAt(Direction direction){
 RoomEdge* Room::getRoomEdge(){
     return _roomEdge;
 }
+
+std::string Room::edgeDescription(Room::Direction direction)
+{
+    return edgeAt(direction)->description();
+}
+
+
+
+
+
+
+
+
 

@@ -16,7 +16,7 @@ void BasicDungeonLevelBuilder::buildungeonLevel(std::string name,int width, int 
 
 std::shared_ptr<Room> BasicDungeonLevelBuilder::buildRoom(int id){
     //create pointer for new room to access edges
-     std::shared_ptr<Room> Aroom = std::make_shared<Room>(id);
+     std::shared_ptr<Room> Aroom = std::make_shared<QuartzChamber>(id);
 
     //Build walls and add to 4 edges
     _edge = new RockWall();

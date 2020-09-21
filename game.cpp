@@ -18,9 +18,11 @@ void Game::setDungeonType(std::string type){
 }
 
 void Game::createExampleLevel(){
-    //setDungeonType("basic");
-    _builder = new BasicDungeonLevelBuilder();
+    setDungeonType("basic");
+    //_builder = new BasicDungeonLevelBuilder();
     _builder->buildungeonLevel("Example Dungeon Level", 1 , 1);
+
+    _builder->getDungeonLevel()->addRoom(_builder->buildRoom(1));
 
     dungeon = _builder->getDungeonLevel();
 

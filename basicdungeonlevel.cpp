@@ -14,5 +14,5 @@ BasicDungeonLevel::~BasicDungeonLevel(){}
 std::string BasicDungeonLevel::description(){
     return _name +
             "\nSize: " + std::to_string(_width) + " x " + std::to_string(_height) +
-            "\nType: Basic Dungeon\n";
+            "\nType: Basic Dungeon\n\n";
 }

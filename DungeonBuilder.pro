@@ -16,6 +16,8 @@ SOURCES += \
         menuinterface.cpp \
         onewaydoor.cpp \
         opendoorway.cpp \
+        quartzchamber.cpp \
+        rockchamber.cpp \
         rockwall.cpp \
         room.cpp \
         roomedge.cpp \
@@ -33,6 +35,8 @@ HEADERS += \
     menuinterface.h \
     onewaydoor.h \
     opendoorway.h \
+    quartzchamber.h \
+    rockchamber.h \
     rockwall.h \
     room.h \
     roomedge.h \

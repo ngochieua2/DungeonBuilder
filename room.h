@@ -1,7 +1,8 @@
 #ifndef ROOM_H
 #define ROOM_H
-#include<string>
-#include<vector>
+#include <string>
+#include <vector>
+#include <array>
 #include<roomedge.h>
 
 class RoomEdge;
@@ -9,10 +10,11 @@ class RoomEdge;
 class Room
 {
 public:
+    Room();
     Room(int id);
     ~Room();
 
-    std::string description();
+    virtual std::string description();
 
     //std::string[] display();
 
@@ -20,8 +22,6 @@ public:
     //Item item();
     //creature()
     //setCreature
-
-
 
     enum class Direction : unsigned {
         North, South, East, West
@@ -35,10 +35,12 @@ public:
 
     RoomEdge* getRoomEdge();
 
-private:
+    std::string edgeDescription(Direction direction);
+
+protected:
     int _id;
 
-    RoomEdge *_roomEdge;
+    RoomEdge *_roomEdge{nullptr};
 
     //std::vector <std::string> _roomVector;
 

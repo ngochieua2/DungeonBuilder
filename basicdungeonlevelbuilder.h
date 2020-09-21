@@ -7,6 +7,8 @@
 #include <opendoorway.h>
 #include <blockeddoorway.h>
 #include <lockeddoor.h>
+#include <quartzchamber.h>
+#include <rockchamber.h>
 
 class BasicDungeonLevelBuilder : public DungeonLevelBuilder
 {
