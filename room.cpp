@@ -87,7 +87,7 @@ std::string Room::edgeDescription(Room::Direction direction)
 std::string Room::creatureDescription()
 {
     if(_abstractCreature == nullptr){
-        return "There is no monster to fight";
+        return "There is no monster to fight\n";
     }
     else {
         return _abstractCreature->name();
@@ -97,7 +97,7 @@ std::string Room::creatureDescription()
 std::string Room::itemDescription()
 {
     if(_item == nullptr){
-        return "There is no Item to pick up";
+        return "There is no Item to pick up\n";
     }
     else {
         return _item->name();
