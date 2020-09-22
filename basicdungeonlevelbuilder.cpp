@@ -55,7 +55,7 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
         _edge = new core::dungeon::common::OpenDoorWay();
         origin->setEdge(_edge,direction);
         //destination->edgeAt(getOppositeDirection(direction))
-        //set connect
+        //set connect / ceate 1 more door vari and change edge to doorway
         _edge = new OpenDoorWay();
         destination->setEdge(_edge, getOppositeDirection(direction));
 
@@ -67,6 +67,7 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
         origin->setEdge(_edge,direction);
         //set connect
         _edge = new BlockedDoorWay();
+
         destination->setEdge(_edge, getOppositeDirection(direction));
 
     }
