@@ -19,6 +19,30 @@ std::string OneWayDoor::description(){
     }
 }
 
+char OneWayDoor::displayCharacter(Room::Direction direction)
+{
+    if (Entrance){
+        return 'I';
+    }
+    else if (Exit) {
+        return 'O';
+    }
+    else {
+        if(direction == Room::Direction::North){
+            return '^';
+        }
+        else if(direction == Room::Direction::South){
+            return 'v';
+        }
+        else if(direction == Room::Direction::East){
+            return '>';
+        }
+        else {
+            return '<';
+        }
+    }
+}
+
 void OneWayDoor::setEntrance(){
     Entrance = true;
 }

@@ -11,8 +11,9 @@ std::string RoomEdge::description()
     return "roomedge ";
 }
 
-char RoomEdge::displayCharacter(){
-    return '?';
+char RoomEdge::displayCharacter(core::dungeon::Room::Direction direction)
+{
+    return 'r';
 }
 
 bool RoomEdge::isPassage(){

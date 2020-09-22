@@ -12,6 +12,22 @@ std::string OpenDoorWay::description(){
     return "an Open Door to another chamber";
 }
 
+char OpenDoorWay::displayCharacter(Room::Direction direction)
+{
+    if(direction == Room::Direction::North){
+        return '^';
+    }
+    else if(direction == Room::Direction::South){
+        return 'v';
+    }
+    else if(direction == Room::Direction::East){
+        return '>';
+    }
+    else {
+        return '<';
+    }
+}
+
 void OpenDoorWay::setEntrance(){
     Entrance = false;
 }

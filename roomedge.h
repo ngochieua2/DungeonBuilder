@@ -13,7 +13,7 @@ public:
     ~RoomEdge();
 
     virtual std::string description();
-    char displayCharacter();
+    virtual char displayCharacter(Room::Direction direction);
     virtual bool isPassage();
 
     virtual bool isEntrance();

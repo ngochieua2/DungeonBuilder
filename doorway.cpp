@@ -13,6 +13,11 @@ std::string Doorway::description()
     return "doorway ";
 }
 
+char Doorway::displayCharacter(Room::Direction direction)
+{
+    return 'd';
+}
+
 void Doorway::connect (Doorway *opposite){
     _doorway = opposite;
 }
@@ -38,7 +43,10 @@ bool Doorway::isPassage(){
     if(isEntrance() || isExit()){
         return false;
     }
-    return true;
+    else {
+        return true;
+    }
+
 }
 
 Doorway::DoorwayType Doorway::getDoorwayType(){

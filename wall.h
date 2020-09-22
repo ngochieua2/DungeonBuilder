@@ -13,6 +13,8 @@ public:
 
     std::string description() override;
 
+    char displayCharacter(Room::Direction direction) override;
+
     bool isPassage()override;
 
 };

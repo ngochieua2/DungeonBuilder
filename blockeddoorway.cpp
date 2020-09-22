@@ -11,6 +11,12 @@ std::string BlockedDoorWay::description(){
     return "a Block Door ";
 }
 
+char BlockedDoorWay::displayCharacter(Room::Direction direction)
+{
+    //check opporite is one way or not
+    return 'X';
+}
+
 void BlockedDoorWay::setEntrance(){
     Entrance = false;
 }

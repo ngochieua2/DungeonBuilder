@@ -13,6 +13,8 @@ public:
 
     std::string description()override;
 
+    char displayCharacter(Room::Direction direction) override;
+
     void connect (Doorway *opposite);
     Doorway *getOpposite();
 

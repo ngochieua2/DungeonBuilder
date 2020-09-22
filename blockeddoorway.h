@@ -14,6 +14,8 @@ public:
 
     std::string description()override;
 
+    char displayCharacter(Room::Direction direction) override;
+
     void setEntrance() override;
 
     void setExit()override;
