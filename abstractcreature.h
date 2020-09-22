@@ -17,8 +17,11 @@ public:
 
     char displayCharacter();
 
+    void setBoss();
+
 protected:
     std::string _name{};
+    bool isBoss{false};
 };
 
 #endif // ABSTRACTCREATURE_H

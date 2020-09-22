@@ -201,6 +201,16 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
 
 void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 {
+    //set boss if this room has exit
+    if (room->edgeAt(Room::Direction::North)->isExit() ||
+        room->edgeAt(Room::Direction::South)->isExit() ||
+        room->edgeAt(Room::Direction::East)->isExit() ||
+        room->edgeAt(Room::Direction::West)->isExit())
+    {
+        aMonster->setBoss();
+    }
+
+
     /*
      * Only one monster can appear in a room
      * There are three monsters type in Basic dungeon level

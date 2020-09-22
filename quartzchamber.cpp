@@ -18,5 +18,6 @@ std::string QuartzChamber::description(){
            "To the NORTH is " + edgeDescription(Direction::North)+ "\n"
            "To the SOUTH is " + edgeDescription(Direction::South)+ "\n"
            "To the EAST is " + edgeDescription(Direction::East)+ "\n"
-           "To the WEST is " + edgeDescription(Direction::West)+ "\n\n";
+           "To the WEST is " + edgeDescription(Direction::West)+ "\n"
+            + creatureDescription() + itemDescription() + "\n";
 }

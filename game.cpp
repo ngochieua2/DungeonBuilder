@@ -60,12 +60,16 @@ void Game::createExampleLevel(){
     _builder->builDoorway(dungeon->retrieveRoom(8),dungeon->retrieveRoom(9),
                           Room::Direction::East,static_cast<DungeonLevelBuilder::MoveConstraints>(0));
 
-
     //Build entrance in the North of room 1
     _builder->buildEntrance(dungeon->retrieveRoom(1),Room::Direction::North);
     //Build exit in the East of room 9
     _builder->buildExit(dungeon->retrieveRoom(9), Room::Direction::East);
 
+    //Build creatures and items
+    for(int i = 0; i < dungeon->numberOfRooms(); ++i){
+         _builder->buildCreature(dungeon->retrieveRoom(i+1));
+         _builder->buildItem(dungeon->retrieveRoom(i+1));
+    }
 
 }
 

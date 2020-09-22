@@ -16,7 +16,7 @@ void Item::setName(std::string name)
 
 std::string Item::name()
 {
-    return _name;
+     return "There is a " + _name + " to pick up.\n";
 }
 
 char Item::displayCharacter()

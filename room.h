@@ -45,6 +45,10 @@ public:
 
     std::string edgeDescription(Direction direction);
 
+    std::string creatureDescription();
+
+    std::string itemDescription();
+
 protected:
     int _id{NULL};
 
