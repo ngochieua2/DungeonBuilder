@@ -6,6 +6,9 @@
 #include <quartzchamber.h>
 #include <rockchamber.h>
 
+namespace core::dungeon::basic
+{
+
 class BasicDungeonLevelBuilder : public DungeonLevelBuilder
 {
 public:
@@ -26,5 +29,7 @@ protected:
       //Doorway *_door{nullptr};
 
 };
+
+}
 
 #endif // BASICDUINGEONLEVELBUILDER_H

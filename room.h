@@ -7,7 +7,7 @@
 #include <weapon.h>
 #include <consumable.h>
 
-
+namespace core::dungeon{
 
 class RoomEdge;
 
@@ -24,11 +24,11 @@ public:
 
     int id();
 
-    Item* item();
-    void setItem(Item* newItem);
+    core::items::Item* item();
+    void setItem(core::items::Item* newItem);
 
-    AbstractCreature* creature();
-    void setCreature(AbstractCreature* newCreature);
+    core::creatures::AbstractCreature* creature();
+    void setCreature(core::creatures::AbstractCreature* newCreature);
 
 
     enum class Direction : unsigned {
@@ -58,10 +58,12 @@ protected:
 
     std::vector <RoomEdge*> EdgesVector;
 
-    AbstractCreature *_abstractCreature{nullptr};
-    Item *_item{nullptr};
+    core::creatures::AbstractCreature *_abstractCreature{nullptr};
+    core::items::Item *_item{nullptr};
 
 
 };
+
+}
 
 #endif // ROOM_H

@@ -2,6 +2,7 @@
 #define ROCKWALL_H
 #include <wall.h>
 
+namespace core::dungeon::basic{
 
 class RockWall : public Wall
 {
@@ -11,5 +12,7 @@ public:
 
     std::string description() override;
 };
+
+}
 
 #endif // ROCKWALL_H

@@ -1,5 +1,7 @@
 #include "item.h"
 
+using core::items::Item;
+
 Item::Item()
 {}
 

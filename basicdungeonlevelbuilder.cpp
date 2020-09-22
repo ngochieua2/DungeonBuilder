@@ -1,5 +1,12 @@
 #include "basicdungeonlevelbuilder.h"
 
+using core::dungeon::Room;
+using core::dungeon::common::OpenDoorWay;
+using core::dungeon::common::OneWayDoor;
+using core::dungeon::common::LockedDoor;
+using core::dungeon::common::BlockedDoorWay;
+using core::dungeon::basic::BasicDungeonLevelBuilder;
+
 BasicDungeonLevelBuilder::BasicDungeonLevelBuilder(){}
 
 BasicDungeonLevelBuilder::~BasicDungeonLevelBuilder(){
@@ -45,7 +52,7 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
     //condition and build an opendoorway
     if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::None)|
                                      static_cast<unsigned>(MoveConstraints::None))){
-        _edge = new OpenDoorWay();
+        _edge = new core::dungeon::common::OpenDoorWay();
         origin->setEdge(_edge,direction);
         //destination->edgeAt(getOppositeDirection(direction))
         //set connect

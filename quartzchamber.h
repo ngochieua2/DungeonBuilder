@@ -3,6 +3,8 @@
 #include <room.h>
 #include <string>
 
+namespace core::dungeon::basic{
+
 class QuartzChamber : public Room
 {
 public:
@@ -12,5 +14,7 @@ public:
     std::string description() override;
 
 };
+
+}
 
 #endif // QUARTZCHAMBER_H

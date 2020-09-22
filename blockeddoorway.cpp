@@ -1,5 +1,8 @@
 #include "blockeddoorway.h"
 
+using core::dungeon::Doorway;
+using core::dungeon::common::BlockedDoorWay;
+
 BlockedDoorWay::BlockedDoorWay(){}
 
 BlockedDoorWay::~BlockedDoorWay(){}

@@ -1,5 +1,7 @@
 #include "abstractcreature.h"
 
+using core::creatures::AbstractCreature;
+
 AbstractCreature::AbstractCreature()
 {}
 

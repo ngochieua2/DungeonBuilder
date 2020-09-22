@@ -4,9 +4,8 @@
 #include <istream>
 #include<game.h>
 
-namespace core {
-
-
+namespace core
+{
 
 class MenuInterface
 {

@@ -2,6 +2,9 @@
 #define DOORWAY_H
 #include<roomedge.h>
 
+namespace core::dungeon
+{
+
 class Doorway : public RoomEdge
 {
 public:
@@ -27,5 +30,7 @@ public:
 protected:
     Doorway *_doorway{nullptr};
 };
+
+}
 
 #endif // DOORWAY_H

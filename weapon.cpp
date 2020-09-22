@@ -1,5 +1,6 @@
 #include "weapon.h"
 
+using core::items::Weapon;
 
 Weapon::Weapon()
 {}

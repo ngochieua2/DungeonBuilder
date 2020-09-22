@@ -3,6 +3,8 @@
 #include <roomedge.h>
 #include <string>
 
+namespace core::dungeon{
+
 class Wall : public RoomEdge
 {
 public:
@@ -13,8 +15,8 @@ public:
 
     bool isPassage()override;
 
-
-
 };
+
+}
 
 #endif // WALL_H

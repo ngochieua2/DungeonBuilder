@@ -28,16 +28,16 @@ public:
     void operator = (Game const&) = delete;
 
 
-    DungeonLevel* getDungeon();
+    core::dungeon::DungeonLevel* getDungeon();
 
 
 private:
     static Game* theInstance;
     Game();
     ~Game();
-    DungeonLevelBuilder *_builder;
+    core::dungeon::DungeonLevelBuilder *_builder;
 
-    DungeonLevel *dungeon;
+    core::dungeon::DungeonLevel *dungeon;
 
 };
 

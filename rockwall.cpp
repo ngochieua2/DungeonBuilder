@@ -1,5 +1,7 @@
 #include "rockwall.h"
 
+using core::dungeon::basic::RockWall;
+
 RockWall::RockWall(){}
 
 RockWall::~RockWall(){}

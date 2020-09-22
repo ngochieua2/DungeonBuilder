@@ -1,5 +1,7 @@
 #include "quartzchamber.h"
 
+using core::dungeon::basic::QuartzChamber;
+
 QuartzChamber::QuartzChamber(int id)
 {
     _id = id;

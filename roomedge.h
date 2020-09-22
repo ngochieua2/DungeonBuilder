@@ -4,7 +4,7 @@
 #include<room.h>
 #include<vector>
 
-//class Room;
+namespace core::dungeon{
 
 class RoomEdge
 {
@@ -38,5 +38,7 @@ protected:
     bool Entrance{false};
     bool Exit{false};
 };
+
+}
 
 #endif // ROOMEDGE_H

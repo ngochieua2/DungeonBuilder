@@ -1,6 +1,6 @@
 #include "basicdungeonlevel.h"
 
-
+using core::dungeon::basic::BasicDungeonLevel;
 
 BasicDungeonLevel::BasicDungeonLevel(std::string &name, int &width, int &height)
 {

@@ -5,6 +5,9 @@
 #include <room.h>
 #include <vector>
 
+namespace core::dungeon
+{
+
 class DungeonLevel
 {
 public:
@@ -34,5 +37,7 @@ protected:
     std::vector<std::shared_ptr<Room>> allRoom{};
 
 };
+
+}
 
 #endif // DUNGEONLEVEL_H

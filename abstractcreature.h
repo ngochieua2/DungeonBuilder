@@ -2,6 +2,9 @@
 #define ABSTRACTCREATURE_H
 #include <string>
 
+namespace core::creatures
+{
+
 class AbstractCreature
 {
 public:
@@ -23,5 +26,7 @@ protected:
     std::string _name{};
     bool isBoss{false};
 };
+
+}
 
 #endif // ABSTRACTCREATURE_H

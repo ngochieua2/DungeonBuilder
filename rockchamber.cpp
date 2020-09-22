@@ -1,5 +1,6 @@
 #include "rockchamber.h"
 
+using core::dungeon::basic::RockChamber;
 
 RockChamber::RockChamber(int id)
 {

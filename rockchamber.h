@@ -3,6 +3,8 @@
 #include <room.h>
 #include <string>
 
+namespace core::dungeon::basic{
+
 class RockChamber : public Room
 {
 public:
@@ -11,5 +13,7 @@ public:
 
     std::string description() override;
 };
+
+}
 
 #endif // ROCKCHAMBER_H

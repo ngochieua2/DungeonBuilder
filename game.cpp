@@ -2,6 +2,11 @@
 //#include<string>
 
 using core::Game;
+using core::dungeon::Room;
+using core::dungeon::DungeonLevelBuilder;
+using core::dungeon::DungeonLevel;
+using core::dungeon::basic::BasicDungeonLevelBuilder;
+
 
 Game::Game(){
 }

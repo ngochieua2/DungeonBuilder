@@ -3,6 +3,9 @@
 #include<doorway.h>
 #include<string>
 
+namespace core::dungeon::common
+{
+
 class OneWayDoor: public Doorway
 {
 public:
@@ -17,5 +20,7 @@ public:
 
     DoorwayType getDoorwayType()override;
 };
+
+}
 
 #endif // ONEWAYDOOR_H

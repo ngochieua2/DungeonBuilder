@@ -3,6 +3,9 @@
 #include <abstractcreature.h>
 #include <string>
 
+namespace core::creatures
+{
+
 class Monster : public AbstractCreature
 {
 public:
@@ -11,5 +14,7 @@ public:
 
     Monster *clone() override;
 };
+
+}
 
 #endif // MONSTER_H

@@ -1,5 +1,7 @@
 #include "consumable.h"
 
+using core::items::Consumable;
+
 Consumable::Consumable()
 {}
 

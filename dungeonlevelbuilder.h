@@ -12,6 +12,8 @@
 #include <consumable.h>
 #include <weapon.h>
 
+namespace core::dungeon
+{
 
 class DungeonLevelBuilder
 {
@@ -49,13 +51,15 @@ protected:
     int _width;
     int _height;
 
-    Monster *aMonster{nullptr};
+    core::creatures::Monster *aMonster{nullptr};
 
-    Weapon *aWeapon{nullptr};
-    Consumable *aConsumable{nullptr};
+    core::items::Weapon *aWeapon{nullptr};
+    core::items::Consumable *aConsumable{nullptr};
 
     std::mt19937 _randomGenerator{uint32_t(time(nullptr))}; //!< Mersenne Twister random number generator seeded by current time
     std::uniform_real_distribution<double> _realDistribution{0.0, 4.0}; //!< For random numbers between 0.0 & 3.0
 };
+
+}
 
 #endif // DUNGEONLEVELBUILDER_H

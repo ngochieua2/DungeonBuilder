@@ -3,6 +3,9 @@
 #include <item.h>
 #include <string>
 
+namespace core::items
+{
+
 class Consumable : public Item
 {
 public:
@@ -11,5 +14,7 @@ public:
 
     Consumable* clone() override;
 };
+
+}
 
 #endif // CONSUMABLE_H

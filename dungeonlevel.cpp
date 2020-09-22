@@ -1,5 +1,8 @@
 #include "dungeonlevel.h"
 
+using core::dungeon::Room;
+using core::dungeon::DungeonLevel;
+
 DungeonLevel::DungeonLevel()
 {}
 

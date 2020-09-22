@@ -1,5 +1,7 @@
 #include "doorway.h"
 
+using core::dungeon::Doorway;
+
 Doorway::Doorway(){}
 
 Doorway::~Doorway(){

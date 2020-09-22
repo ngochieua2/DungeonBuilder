@@ -1,5 +1,7 @@
 #include "roomedge.h"
 
+using core::dungeon::RoomEdge;
+
 RoomEdge::RoomEdge(){}
 
 RoomEdge::~RoomEdge(){}

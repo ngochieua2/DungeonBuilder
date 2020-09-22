@@ -3,6 +3,8 @@
 #include <item.h>
 #include <string>
 
+namespace core::items{
+
 class Weapon : public Item
 {
 public:
@@ -12,5 +14,7 @@ public:
     Weapon* clone() override;
 
 };
+
+}
 
 #endif // WEAPON_H

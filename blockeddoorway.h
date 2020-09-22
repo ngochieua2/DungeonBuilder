@@ -3,6 +3,8 @@
 #include<doorway.h>
 #include<string>
 
+namespace core::dungeon::common
+{
 
 class BlockedDoorWay: public Doorway
 {
@@ -19,5 +21,7 @@ public:
     DoorwayType getDoorwayType() override;
 
 };
+
+}
 
 #endif // BLOCKEDDOORWAY_H

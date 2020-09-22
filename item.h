@@ -2,6 +2,8 @@
 #define ITEM_H
 #include <string>
 
+namespace core::items{
+
 class Item
 {
 public:
@@ -21,5 +23,7 @@ protected:
     std::string _name{};
 
 };
+
+}
 
 #endif // ITEM_H

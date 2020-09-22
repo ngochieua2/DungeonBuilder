@@ -1,5 +1,8 @@
 #include "onewaydoor.h"
 
+using core::dungeon::Doorway;
+using core::dungeon::common::OneWayDoor;
+
 OneWayDoor::OneWayDoor(){}
 
 OneWayDoor::~OneWayDoor(){}

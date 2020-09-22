@@ -1,5 +1,10 @@
 #include "room.h"
 
+using core::creatures::AbstractCreature;
+using core::items::Item;
+using core::dungeon::Room;
+using core::dungeon::RoomEdge;
+
 Room::Room(){}
 
 Room::Room(int id): _id{id}{

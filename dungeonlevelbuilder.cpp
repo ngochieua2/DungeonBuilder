@@ -1,5 +1,12 @@
 #include "dungeonlevelbuilder.h"
 
+using core::creatures::Monster;
+using core::items::Weapon;
+using core::items::Consumable;
+using core::dungeon::Room;
+using core::dungeon::DungeonLevel;
+using core::dungeon::DungeonLevelBuilder;
+
 DungeonLevelBuilder::DungeonLevelBuilder(){
     aMonster = new Monster();
     aWeapon = new Weapon();

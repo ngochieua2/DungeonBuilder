@@ -3,6 +3,9 @@
 #include<dungeonlevel.h>
 #include<string>
 
+namespace core::dungeon::basic
+{
+
 class BasicDungeonLevel : public DungeonLevel
 {
 public:
@@ -12,5 +15,7 @@ public:
     std::string description() override;
 
 };
+
+}
 
 #endif // BASICDUNGEONLEVEL_H
