@@ -3,10 +3,6 @@
 #include <dungeonlevelbuilder.h>
 #include <basicdungeonlevel.h>
 #include <rockwall.h>
-#include <onewaydoor.h>
-#include <opendoorway.h>
-#include <blockeddoorway.h>
-#include <lockeddoor.h>
 #include <quartzchamber.h>
 #include <rockchamber.h>
 
@@ -21,9 +17,8 @@ public:
       void builDoorway(std::shared_ptr<Room> origin, std::shared_ptr<Room> destination, Room::Direction direction, MoveConstraints constraints) override;
       void buildEntrance(std::shared_ptr<Room> room, Room::Direction direction) override;
       void buildExit(std::shared_ptr<Room> room, Room::Direction direction) override;
-
-//    void buildItem(Room) const override;
-//    void buildCreature(Room) const override;
+      void buildItem(std::shared_ptr<Room> room)  override;
+      void buildCreature(std::shared_ptr<Room> room)  override;
 
 protected:
       RoomEdge *_edge;

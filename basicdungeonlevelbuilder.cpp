@@ -1,6 +1,8 @@
 #include "basicdungeonlevelbuilder.h"
 
-BasicDungeonLevelBuilder::BasicDungeonLevelBuilder(){}
+BasicDungeonLevelBuilder::BasicDungeonLevelBuilder(){
+    //aMonster
+}
 
 BasicDungeonLevelBuilder::~BasicDungeonLevelBuilder(){
     delete[] _edge;
@@ -15,8 +17,15 @@ void BasicDungeonLevelBuilder::buildungeonLevel(std::string name,int width, int 
 }
 
 std::shared_ptr<Room> BasicDungeonLevelBuilder::buildRoom(int id){
-    //create pointer for new room to access edges
-     std::shared_ptr<Room> Aroom = std::make_shared<QuartzChamber>(id);
+    //create pointer for new room to access edges // May need to optimate
+    std::shared_ptr<Room> Aroom;
+    //Toss a coin to choose room type
+    if (randomDouble() <= 1.5){
+         Aroom = std::make_shared<QuartzChamber>(id);
+    }
+    else {
+        Aroom = std::make_shared<RockChamber>(id);
+    }
 
     //Build walls and add to 4 edges
     _edge = new RockWall();
@@ -121,5 +130,15 @@ void BasicDungeonLevelBuilder::buildExit(std::shared_ptr<Room> room, Room::Direc
     _edge = new OneWayDoor();
     _edge->setExit();
     room->setEdge(_edge,direction);
+}
+
+void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
+{
+
+}
+
+void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
+{
+
 }
 

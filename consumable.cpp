@@ -1,7 +1,9 @@
 #include "consumable.h"
 
 Consumable::Consumable(std::string name)
-{}
+{
+    _name = name;
+}
 
 Consumable::~Consumable()
 {}

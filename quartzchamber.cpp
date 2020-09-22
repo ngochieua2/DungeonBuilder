@@ -3,6 +3,7 @@
 QuartzChamber::QuartzChamber(int id)
 {
     _id = id;
+    _roomType = roomType::quartzChamber;
     EdgesVector.assign(4,_roomEdge);
 }
 

@@ -1,9 +1,9 @@
 #ifndef DUNGEONLEVEL_H
 #define DUNGEONLEVEL_H
-#include<memory>
-#include<string>
-#include<room.h>
-#include<vector>
+#include <memory>
+#include <string>
+#include <room.h>
+#include <vector>
 
 class DungeonLevel
 {
@@ -32,6 +32,7 @@ protected:
 
     std::shared_ptr <Room> ptrRoom{};
     std::vector<std::shared_ptr<Room>> allRoom{};
+
 };
 
 #endif // DUNGEONLEVEL_H

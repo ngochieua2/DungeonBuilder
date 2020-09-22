@@ -11,6 +11,8 @@ Room::~Room(){
     for (int i = 0; i < (int)EdgesVector.size(); ++ i){
         delete[] EdgesVector[i];
     }
+    delete _item;
+    delete _abstractCreature;
 }
 
 std::string Room::description()
@@ -23,6 +25,25 @@ int Room::id(){
     return _id;
 }
 
+Item *Room::item()
+{
+    return _item;
+}
+
+void Room::setItem(Item *newItem)
+{
+    _item = newItem;
+}
+
+AbstractCreature *Room::creature()
+{
+    return _abstractCreature;
+}
+
+void Room::setCreature(AbstractCreature *newCreature)
+{
+    _abstractCreature = newCreature;
+}
 
 void Room::setEdge(RoomEdge *edge, Direction direction){
     if(direction == Direction::North){
@@ -62,6 +83,12 @@ std::string Room::edgeDescription(Room::Direction direction)
 {
     return edgeAt(direction)->description();
 }
+
+Room::roomType Room::getRoomType()
+{
+    return _roomType;
+}
+
 
 
 
