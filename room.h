@@ -45,13 +45,6 @@ public:
 
     std::string edgeDescription(Direction direction);
 
-    enum class roomType : unsigned {
-        quartzChamber,
-        rockChamber
-    };
-
-    roomType getRoomType();
-
 protected:
     int _id{NULL};
 
@@ -64,7 +57,6 @@ protected:
     AbstractCreature *_abstractCreature{nullptr};
     Item *_item{nullptr};
 
-    roomType _roomType{NULL};
 
 };
 

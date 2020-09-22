@@ -11,6 +11,8 @@ public:
 
     virtual Item* clone() = 0;
 
+    void setName(std::string name);
+
     std::string name();
 
     char displayCharacter();

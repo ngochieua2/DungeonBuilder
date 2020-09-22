@@ -84,10 +84,7 @@ std::string Room::edgeDescription(Room::Direction direction)
     return edgeAt(direction)->description();
 }
 
-Room::roomType Room::getRoomType()
-{
-    return _roomType;
-}
+
 
 
 

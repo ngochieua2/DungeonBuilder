@@ -6,7 +6,7 @@
 class Monster : public AbstractCreature
 {
 public:
-    Monster(std::string name);
+    Monster();
     ~Monster();
 
     Monster *clone() override;

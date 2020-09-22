@@ -1,6 +1,10 @@
 #include "dungeonlevelbuilder.h"
 
-DungeonLevelBuilder::DungeonLevelBuilder(){}
+DungeonLevelBuilder::DungeonLevelBuilder(){
+    aMonster = new Monster();
+    aWeapon = new Weapon();
+    aConsumable = new Consumable();
+}
 
 DungeonLevelBuilder::~DungeonLevelBuilder(){
     delete[] aMonster;

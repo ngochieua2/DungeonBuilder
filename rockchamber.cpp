@@ -4,7 +4,6 @@
 RockChamber::RockChamber(int id)
 {
     _id = id;
-    _roomType = roomType::rockChamber;
     EdgesVector.assign(4,_roomEdge);
 }
 

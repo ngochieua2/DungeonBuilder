@@ -6,7 +6,7 @@
 class Consumable : public Item
 {
 public:
-    Consumable(std::string name);
+    Consumable();
     ~Consumable();
 
     Consumable* clone() override;

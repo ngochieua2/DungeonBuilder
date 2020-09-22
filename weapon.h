@@ -6,7 +6,7 @@
 class Weapon : public Item
 {
 public:
-    Weapon(std::string name);
+    Weapon();
     ~Weapon();
 
     Weapon* clone() override;
