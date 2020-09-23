@@ -216,27 +216,28 @@ std::vector<std::string> Room::display()
                     row.push_back(edgeAt(Room::Direction::East)->displayCharacter());
                 }
                 else if (j == 4) {
-                    if (_abstractCreature == nullptr){
-                        row.push_back(' ');
+                    if (_abstractCreature != nullptr){
+                        row.push_back(creature()->displayCharacter());
                     }
                     else {
-                        row.push_back(creature()->displayCharacter());
+                        row.push_back(' ');
                     }
                 }
                 else if (j == 5) {
-                    if(creature()->isBoss()){
+                    if(_abstractCreature != nullptr && creature()->isBoss()){
                         row.push_back('*');
                     }
                     else {
                         row.push_back(' ');
                     }
+
                 }
                 else if (j == 6) {
-                    if (_item == nullptr){
-                        row.push_back(' ');
+                    if (_item != nullptr){
+                        row.push_back(item()->displayCharacter());
                     }
                     else {
-                        row.push_back(item()->displayCharacter());
+                        row.push_back(' ');
                     }
                 }
                 else {

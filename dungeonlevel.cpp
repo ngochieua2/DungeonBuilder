@@ -42,6 +42,8 @@ std::string DungeonLevel::description(){
 
 std::string DungeonLevel::display()
 {
+    int w = 0;
+
     for(int i = 0; i < numberOfRooms(); i = i + width())
     {
         for(int j = 0; j < 6; ++j)
@@ -50,19 +52,19 @@ std::string DungeonLevel::display()
            {
                if(j == 2) // check connection in the east
                {
-                    if(retrieveRoom(k)->edgeAt(Room::Direction::East)->isPassage()){
-                        dungeonMap += retrieveRoom(k)->display().at(j);
+                    if(retrieveRoom(k+w)->edgeAt(Room::Direction::East)->isPassage()){
+                        dungeonMap += retrieveRoom(k+w)->display().at(j);
                         dungeonMap += "--";
                     }
                     else {
-                        dungeonMap += retrieveRoom(k)->display().at(j);
+                        dungeonMap += retrieveRoom(k+w)->display().at(j);
                         dungeonMap += "  ";
                     }
                }
                else if (j == 5) // check connection in the south
                {
                    dungeonMap += "     "; // 5 chars
-                   if(retrieveRoom(k)->edgeAt(Room::Direction::South)->isPassage()){
+                   if(retrieveRoom(k+w)->edgeAt(Room::Direction::South)->isPassage()){
                        dungeonMap += "|";
                    }
                    else {
@@ -71,13 +73,14 @@ std::string DungeonLevel::display()
                    dungeonMap += "       "; // 7 chars
                }
                else {
-                   dungeonMap += retrieveRoom(k)->display().at(j);
+                   dungeonMap += retrieveRoom(k+w)->display().at(j);
                    dungeonMap += "  ";
                }
 
            }
            dungeonMap += "\n";
         }
+        w += width();
     }
 
     return dungeonMap;
