@@ -26,7 +26,7 @@ public:
 
     virtual std::string description();
 
-    //std::string[] display();
+    std::string display();
 
 protected:
     std::string _name;
@@ -35,6 +35,7 @@ protected:
 
     std::shared_ptr <Room> ptrRoom{};
     std::vector<std::shared_ptr<Room>> allRoom{};
+    std::string dungeonMap{};
 
 };
 

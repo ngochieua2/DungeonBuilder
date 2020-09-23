@@ -11,27 +11,17 @@ std::string BlockedDoorWay::description(){
     return "a Block Door ";
 }
 
-char BlockedDoorWay::displayCharacter(Room::Direction direction)
+char BlockedDoorWay::displayCharacter()
 {
     if(_oppositeDoor->isOneWayDoor()){
-        if(direction == Room::Direction::North){
-            return _oppositeDoor->displayCharacter(Room::Direction::South);
-        }
-        if(direction == Room::Direction::South){
-            return _oppositeDoor->displayCharacter(Room::Direction::North);
-        }
-        if(direction == Room::Direction::East){
-            return _oppositeDoor->displayCharacter(Room::Direction::West);
-        }
-        else{
-            return _oppositeDoor->displayCharacter(Room::Direction::East);
-        }
-
+        return _oppositeDoor->displayCharacter();
     }
-    else{
+    else {
         return 'X';
     }
 }
+
+
 
 void BlockedDoorWay::setEntrance(){
     Entrance = false;
@@ -39,9 +29,4 @@ void BlockedDoorWay::setEntrance(){
 
 void BlockedDoorWay::setExit(){
     Exit = false;
-}
-
-Doorway::DoorwayType BlockedDoorWay::getDoorwayType()
-{
-    return DoorwayType::BlockedDoorway;
 }

@@ -21,8 +21,6 @@ public:
 
     virtual std::string description();
 
-    //std::string[] display();
-
     int id();
 
     core::items::Item* item();
@@ -50,12 +48,14 @@ public:
 
     std::string itemDescription();
 
+    std::vector<std::string> display();
+
 protected:
     int _id{NULL};
 
     RoomEdge *_roomEdge{nullptr};
 
-    //std::vector <std::string> _roomVector;
+    std::vector <std::string> roomMap;
 
     std::vector <RoomEdge*> EdgesVector;
 

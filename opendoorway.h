@@ -14,13 +14,10 @@ public:
 
     std::string description()override;
 
-    char displayCharacter(core::dungeon::Room::Direction direction);
-
     void setEntrance() override;
 
     void setExit() override;
 
-    DoorwayType getDoorwayType()override;
 };
 
 }

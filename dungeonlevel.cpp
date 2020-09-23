@@ -40,5 +40,48 @@ std::string DungeonLevel::description(){
     return "this is DungeonLevel description";
 }
 
+std::string DungeonLevel::display()
+{
+    for(int i = 0; i < numberOfRooms(); i = i + width())
+    {
+        for(int j = 0; j < 6; ++j)
+        {
+           for(int k = 1; k <= width(); ++k)
+           {
+               if(j == 2) // check connection in the east
+               {
+                    if(retrieveRoom(k)->edgeAt(Room::Direction::East)->isPassage()){
+                        dungeonMap += retrieveRoom(k)->display().at(j);
+                        dungeonMap += "--";
+                    }
+                    else {
+                        dungeonMap += retrieveRoom(k)->display().at(j);
+                        dungeonMap += "  ";
+                    }
+               }
+               else if (j == 5) // check connection in the south
+               {
+                   dungeonMap += "     "; // 5 chars
+                   if(retrieveRoom(k)->edgeAt(Room::Direction::South)->isPassage()){
+                       dungeonMap += "|";
+                   }
+                   else {
+                       dungeonMap += " "; // 1 char
+                   }
+                   dungeonMap += "       "; // 7 chars
+               }
+               else {
+                   dungeonMap += retrieveRoom(k)->display().at(j);
+                   dungeonMap += "  ";
+               }
 
-//std::string[] display();
+           }
+           dungeonMap += "\n";
+        }
+    }
+
+    return dungeonMap;
+}
+
+
+

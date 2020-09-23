@@ -13,11 +13,10 @@ std::string Doorway::description()
     return "doorway ";
 }
 
-char Doorway::displayCharacter(core::dungeon::Room::Direction direction)
+char Doorway::displayCharacter()
 {
-    return 'd';
+    return character;
 }
-
 
 
 void Doorway::connect (Doorway *opposite){
@@ -51,8 +50,4 @@ bool Doorway::isPassage(){
         return true;
     }
 
-}
-
-Doorway::DoorwayType Doorway::getDoorwayType(){
-    return DoorwayType::Undefine;
 }

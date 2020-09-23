@@ -13,7 +13,6 @@ public:
 
     std::string description() override;
 
-    char displayCharacter(core::dungeon::Room::Direction direction);
 
     bool isPassage()override;
 

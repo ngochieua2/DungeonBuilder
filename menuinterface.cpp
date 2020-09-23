@@ -85,7 +85,10 @@ void MenuInterface::viewMenu(std::ostream &output, std::istream &input){
             explorationMenu(output, input);
         }
         else if (a == "v"){
-            output << "Event for view\n" << std::endl;
+            output << Game::getInstance()->getDungeon()->name() << std::endl;
+            output << std::endl;
+
+            output << Game::getInstance()->getDungeon()->display() << std::endl;
         }
         else if (a == "r"){
             output << "return to the main menu\n" << std::endl;

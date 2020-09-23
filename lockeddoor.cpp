@@ -16,6 +16,7 @@ char LockedDoor::displayCharacter()
     return '@';
 }
 
+
 void LockedDoor::setEntrance(){
     Entrance = false;
 }
@@ -24,7 +25,3 @@ void LockedDoor::setExit(){
     Exit = false;
 }
 
-Doorway::DoorwayType LockedDoor::getDoorwayType()
-{
-    return DoorwayType::LockedDoorway;
-}

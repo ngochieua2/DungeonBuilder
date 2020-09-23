@@ -14,13 +14,11 @@ public:
 
      std::string description()override;
 
-     char displayCharacter();
+     char displayCharacter() override;
 
      void setEntrance()override;
 
      void setExit() override;
-
-     DoorwayType getDoorwayType()override;
 
 };
 

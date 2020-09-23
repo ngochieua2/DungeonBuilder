@@ -22,9 +22,11 @@ public:
 
     void setBoss();
 
+    bool isBoss();
+
 protected:
     std::string _name{};
-    bool isBoss{false};
+    bool Boss{false};
 };
 
 }

@@ -1,6 +1,7 @@
 #include "roomedge.h"
 
 using core::dungeon::RoomEdge;
+using core::dungeon::Room;
 
 RoomEdge::RoomEdge(){}
 
@@ -11,10 +12,16 @@ std::string RoomEdge::description()
     return "roomedge ";
 }
 
+void RoomEdge::setChar(char sChar)
+{
+    character = sChar;
+}
+
 char RoomEdge::displayCharacter()
 {
-    return 'r';
+    return character;
 }
+
 
 bool RoomEdge::isPassage(){
     return false;
@@ -32,11 +39,6 @@ bool RoomEdge::isExit()
 void RoomEdge::setEntrance(){}
 
 void RoomEdge::setExit(){}
-
-RoomEdge::DoorwayType RoomEdge::getDoorwayType()
-{
-    return DoorwayType::Undefine;
-}
 
 
 

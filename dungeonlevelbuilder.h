@@ -1,6 +1,6 @@
 #ifndef DUNGEONLEVELBUILDER_H
 #define DUNGEONLEVELBUILDER_H
-#include<string>
+#include <string>
 #include <dungeonlevel.h>
 #include <random>
 #include <ctime>
