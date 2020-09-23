@@ -3,7 +3,9 @@
 using core::dungeon::Doorway;
 using core::dungeon::common::OneWayDoor;
 
-OneWayDoor::OneWayDoor(){}
+OneWayDoor::OneWayDoor(){
+    oneWay = true;
+}
 
 OneWayDoor::~OneWayDoor(){}
 
@@ -19,7 +21,7 @@ std::string OneWayDoor::description(){
     }
 }
 
-char OneWayDoor::displayCharacter(Room::Direction direction)
+char OneWayDoor::displayCharacter(core::dungeon::Room::Direction direction)
 {
     if (Entrance){
         return 'I';

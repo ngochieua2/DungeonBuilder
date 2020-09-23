@@ -24,9 +24,10 @@ public:
       void buildCreature(std::shared_ptr<Room> room)  override;
 
 protected:
-      RoomEdge *_edge;
-      //Wall *_wall{nullptr};
-      //Doorway *_door{nullptr};
+      //RoomEdge *_edge;
+      Wall *_wall{nullptr};
+      Doorway *_door{nullptr};
+      Doorway *_oppositeDoor{nullptr};
 
 };
 

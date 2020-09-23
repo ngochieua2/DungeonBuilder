@@ -10,9 +10,10 @@ using core::dungeon::basic::BasicDungeonLevelBuilder;
 BasicDungeonLevelBuilder::BasicDungeonLevelBuilder(){}
 
 BasicDungeonLevelBuilder::~BasicDungeonLevelBuilder(){
-    delete[] _edge;
-    //delete[] _wall;
-    //delete[] _door;
+    //delete[] _edge;
+    delete[] _wall;
+    delete[] _door;
+    delete[] _oppositeDoor;
 }
 
 
@@ -33,14 +34,14 @@ std::shared_ptr<Room> BasicDungeonLevelBuilder::buildRoom(int id){
     }
 
     //Build walls and add to 4 edges
-    _edge = new RockWall();
-    Aroom->setEdge(_edge, Room::Direction::North);
-    _edge = new RockWall();
-    Aroom->setEdge(_edge, Room::Direction::East);
-    _edge = new RockWall();
-    Aroom->setEdge(_edge, Room::Direction::South);
-    _edge = new RockWall();
-    Aroom->setEdge(_edge, Room::Direction::West);
+    _wall = new RockWall();
+    Aroom->setEdge(_wall, Room::Direction::North);
+    _wall = new RockWall();
+    Aroom->setEdge(_wall, Room::Direction::East);
+    _wall = new RockWall();
+    Aroom->setEdge(_wall, Room::Direction::South);
+    _wall = new RockWall();
+    Aroom->setEdge(_wall, Room::Direction::West);
 
     return Aroom;
 
@@ -52,73 +53,78 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
     //condition and build an opendoorway
     if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::None)|
                                      static_cast<unsigned>(MoveConstraints::None))){
-        _edge = new core::dungeon::common::OpenDoorWay();
-        origin->setEdge(_edge,direction);
-        //destination->edgeAt(getOppositeDirection(direction))
-        //set connect / ceate 1 more door vari and change edge to doorway
-        _edge = new OpenDoorWay();
-        destination->setEdge(_edge, getOppositeDirection(direction));
+        _door = new OpenDoorWay();
+        _oppositeDoor = new OpenDoorWay();
+        _door->connect(_oppositeDoor);
+        _oppositeDoor->connect(_door);
+        origin->setEdge(_door,direction);
+        destination->setEdge(_oppositeDoor, getOppositeDirection(direction));
 
     }
     //condition and build an onewaydoor from origin to destination
     else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::None)|
                                      static_cast<unsigned>(MoveConstraints::DestinationImpassable))){
-        _edge = new OneWayDoor();
-        origin->setEdge(_edge,direction);
-        //set connect
-        _edge = new BlockedDoorWay();
-
-        destination->setEdge(_edge, getOppositeDirection(direction));
+        _door = new OneWayDoor();
+        _oppositeDoor = new BlockedDoorWay();
+        _door->connect(_oppositeDoor);
+        _oppositeDoor->connect(_door);
+        origin->setEdge(_door,direction);
+        destination->setEdge(_oppositeDoor, getOppositeDirection(direction));
 
     }
     //condition and build an onewaydoor from destination to origin
     else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::OriginImpassable)|
                                      static_cast<unsigned>(MoveConstraints::None))){
-        _edge = new BlockedDoorWay();
-        origin->setEdge(_edge,direction);
-        //set connect
-        _edge = new OneWayDoor();
-        destination->setEdge(_edge, getOppositeDirection(direction));
+        _door = new BlockedDoorWay();
+        _oppositeDoor = new OneWayDoor();
+        _door->connect(_oppositeDoor);
+        _oppositeDoor->connect(_door);
+        origin->setEdge(_door,direction);
+        destination->setEdge(_oppositeDoor, getOppositeDirection(direction));
 
     }
     //condition and build an blockedDoorway from origin to destination
     else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::OriginImpassable)|
                                      static_cast<unsigned>(MoveConstraints::DestinationImpassable))){
-        _edge = new BlockedDoorWay();
-        origin->setEdge(_edge,direction);
-        //set connect
-        _edge = new BlockedDoorWay();
-        destination->setEdge(_edge, getOppositeDirection(direction));
+        _door = new BlockedDoorWay();
+        _oppositeDoor = new BlockedDoorWay();
+        _door->connect(_oppositeDoor);
+        _oppositeDoor->connect(_door);
+        origin->setEdge(_door,direction);
+        destination->setEdge(_oppositeDoor, getOppositeDirection(direction));
 
     }
     //condition and build an lockedDoorway from origin to destination
     else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::OriginLocked)|
                                      static_cast<unsigned>(MoveConstraints::DestinationLocked))){
-        _edge = new LockedDoor();
-        origin->setEdge(_edge,direction);
-        //set connect
-        _edge = new LockedDoor();
-        destination->setEdge(_edge, getOppositeDirection(direction));
+        _door = new LockedDoor();
+        _oppositeDoor = new LockedDoor();
+        _door->connect(_oppositeDoor);
+        _oppositeDoor->connect(_door);
+        origin->setEdge(_door,direction);
+        destination->setEdge(_oppositeDoor, getOppositeDirection(direction));
 
     }
     //condition and build an one way doorway in origin and a locked doorway in destination
     else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::None)|
                                      static_cast<unsigned>(MoveConstraints::DestinationLocked))){
-        _edge = new OneWayDoor();
-        origin->setEdge(_edge,direction);
-        //set connect
-        _edge = new LockedDoor();
-        destination->setEdge(_edge, getOppositeDirection(direction));
+        _door = new OneWayDoor();
+        _oppositeDoor = new LockedDoor();
+        _door->connect(_oppositeDoor);
+        _oppositeDoor->connect(_door);
+        origin->setEdge(_door,direction);
+        destination->setEdge(_oppositeDoor, getOppositeDirection(direction));
 
     }
     //condition and build a locked door in origin and an one way door in destination
     else if (constraints == static_cast<MoveConstraints>(static_cast<unsigned>(MoveConstraints::OriginLocked)|
                                      static_cast<unsigned>(MoveConstraints::None))){
-        _edge = new LockedDoor();
-        origin->setEdge(_edge,direction);
-        //set connect
-        _edge = new OneWayDoor();
-        destination->setEdge(_edge, getOppositeDirection(direction));
+        _door = new LockedDoor();
+        _oppositeDoor = new OneWayDoor();
+        _door->connect(_oppositeDoor);
+        _oppositeDoor->connect(_door);
+        origin->setEdge(_door,direction);
+        destination->setEdge(_oppositeDoor, getOppositeDirection(direction));
 
     }
     else{
@@ -127,15 +133,15 @@ void BasicDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::sh
 }
 
 void BasicDungeonLevelBuilder::buildEntrance(std::shared_ptr<Room> room, Room::Direction direction){
-    _edge = new OneWayDoor();
-    _edge->setEntrance();
-    room->setEdge(_edge,direction);
+    _door = new OneWayDoor();
+    _door->setEntrance();
+    room->setEdge(_door,direction);
 }
 
 void BasicDungeonLevelBuilder::buildExit(std::shared_ptr<Room> room, Room::Direction direction){
-    _edge = new OneWayDoor();
-    _edge->setExit();
-    room->setEdge(_edge,direction);
+    _door = new OneWayDoor();
+    _door->setExit();
+    room->setEdge(_door,direction);
 }
 
 void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)

@@ -28,7 +28,7 @@ std::string AbstractCreature::name()
 
 char AbstractCreature::displayCharacter()
 {
-    return 'b';
+    return 'M';
 }
 
 void AbstractCreature::setBoss()

@@ -13,10 +13,9 @@ public:
 
     std::string description()override;
 
-    char displayCharacter(Room::Direction direction) override;
+    char displayCharacter(core::dungeon::Room::Direction direction);
 
     void connect (Doorway *opposite);
-    Doorway *getOpposite();
 
     bool isEntrance() override;
     bool isExit() override;
@@ -27,10 +26,13 @@ public:
 
     void setExit() override;
 
+    bool isOneWayDoor();
+
     DoorwayType getDoorwayType() override;
 
 protected:
-    Doorway *_doorway{nullptr};
+    Doorway *_oppositeDoor{nullptr};
+    bool oneWay{false};
 };
 
 }

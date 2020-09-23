@@ -4,7 +4,8 @@
 #include<room.h>
 #include<vector>
 
-namespace core::dungeon{
+namespace core::dungeon
+{
 
 class RoomEdge
 {
@@ -13,7 +14,7 @@ public:
     ~RoomEdge();
 
     virtual std::string description();
-    virtual char displayCharacter(Room::Direction direction);
+    char displayCharacter();
     virtual bool isPassage();
 
     virtual bool isEntrance();

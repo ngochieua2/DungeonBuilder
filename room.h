@@ -7,7 +7,8 @@
 #include <weapon.h>
 #include <consumable.h>
 
-namespace core::dungeon{
+namespace core::dungeon
+{
 
 class RoomEdge;
 

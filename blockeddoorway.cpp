@@ -13,8 +13,24 @@ std::string BlockedDoorWay::description(){
 
 char BlockedDoorWay::displayCharacter(Room::Direction direction)
 {
-    //check opporite is one way or not
-    return 'X';
+    if(_oppositeDoor->isOneWayDoor()){
+        if(direction == Room::Direction::North){
+            return _oppositeDoor->displayCharacter(Room::Direction::South);
+        }
+        if(direction == Room::Direction::South){
+            return _oppositeDoor->displayCharacter(Room::Direction::North);
+        }
+        if(direction == Room::Direction::East){
+            return _oppositeDoor->displayCharacter(Room::Direction::West);
+        }
+        else{
+            return _oppositeDoor->displayCharacter(Room::Direction::East);
+        }
+
+    }
+    else{
+        return 'X';
+    }
 }
 
 void BlockedDoorWay::setEntrance(){

@@ -51,6 +51,7 @@ protected:
     int _width;
     int _height;
 
+
     core::creatures::Monster *aMonster{nullptr};
 
     core::items::Weapon *aWeapon{nullptr};

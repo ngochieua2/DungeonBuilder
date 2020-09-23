@@ -11,7 +11,7 @@ std::string LockedDoor::description(){
     return "A Locked Door to another chamber";
 }
 
-char LockedDoor::displayCharacter(Room::Direction direction)
+char LockedDoor::displayCharacter()
 {
     return '@';
 }

@@ -9,7 +9,7 @@ class Item
 public:
     Item();
     Item(std::string name);
-    ~Item();
+    virtual ~Item();
 
     virtual Item* clone() = 0;
 

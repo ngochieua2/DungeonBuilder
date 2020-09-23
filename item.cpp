@@ -23,7 +23,7 @@ std::string Item::name()
 
 char Item::displayCharacter()
 {
-    return 'a';
+    return 'L';
 }
 
 

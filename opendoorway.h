@@ -14,7 +14,7 @@ public:
 
     std::string description()override;
 
-    char displayCharacter(Room::Direction direction) override;
+    char displayCharacter(core::dungeon::Room::Direction direction);
 
     void setEntrance() override;
 

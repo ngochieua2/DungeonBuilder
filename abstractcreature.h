@@ -10,7 +10,7 @@ class AbstractCreature
 public:
     AbstractCreature();
     AbstractCreature(std::string name);
-    ~AbstractCreature();
+    virtual ~AbstractCreature();
 
     virtual AbstractCreature *clone() = 0;
 

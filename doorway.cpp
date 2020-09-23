@@ -5,7 +5,7 @@ using core::dungeon::Doorway;
 Doorway::Doorway(){}
 
 Doorway::~Doorway(){
-    delete [] _doorway;
+    delete [] _oppositeDoor;
 }
 
 std::string Doorway::description()
@@ -13,18 +13,17 @@ std::string Doorway::description()
     return "doorway ";
 }
 
-char Doorway::displayCharacter(Room::Direction direction)
+char Doorway::displayCharacter(core::dungeon::Room::Direction direction)
 {
     return 'd';
 }
 
+
+
 void Doorway::connect (Doorway *opposite){
-    _doorway = opposite;
+    _oppositeDoor = opposite;
 }
 
-Doorway* Doorway::getOpposite(){
-    return _doorway;
-}
 
 bool Doorway::isEntrance(){
     return Entrance;
@@ -37,6 +36,11 @@ bool Doorway::isExit(){
 void Doorway::setEntrance(){}
 
 void Doorway::setExit(){}
+
+bool Doorway::isOneWayDoor()
+{
+    return oneWay;
+}
 
 
 bool Doorway::isPassage(){
