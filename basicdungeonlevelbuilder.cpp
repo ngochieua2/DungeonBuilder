@@ -26,7 +26,7 @@ std::shared_ptr<Room> BasicDungeonLevelBuilder::buildRoom(int id){
     //create pointer for new room to access edges // May need to optimate
     std::shared_ptr<Room> Aroom;
     //Toss a coin to choose room type
-    if (randomDouble() <= 2){
+    if (randomDouble() <= 3){
          Aroom = std::make_shared<QuartzChamber>(id);
     }
     else {
@@ -151,7 +151,7 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
      */
     double value{0};
 
-    if (randomDouble() <= 2)
+    if (randomDouble() <= 3)
     /*
      * A weapon may appears in this room, including:
      * - Boomerang
@@ -160,26 +160,21 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
      */
     {
         value = randomDouble();
-        if(value <= 1) // a boomerang appears in the room
+        if(value <= 2) // a boomerang appears in the room
         {
             aWeapon->setName("Boomerang");
             room->setItem(aWeapon->clone());
         }
-        else if (value <= 2) // a Short Sword appears in the room
+        else if (value <= 4) // a Short Sword appears in the room
         {
             aWeapon->setName("Short Sword");
             room->setItem(aWeapon->clone());
         }
-        else if (value <= 3) // a Battle Axe appears in the room
+        else // a Battle Axe appears in the room
         {
             aWeapon->setName("Battle Axe");
             room->setItem(aWeapon->clone());
         }
-        else //No weapon in the room
-        {
-            room->setItem(nullptr);
-        }
-
     }
     else
     /*
@@ -190,24 +185,20 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
      */
     {
         value = randomDouble();
-        if(value <= 1) // a Health Potion appears in the room
+        if(value <= 2) // a Health Potion appears in the room
         {
             aConsumable->setName("Health Potion");
             room->setItem(aConsumable->clone());
         }
-        else if (value <= 2) // a Molotov Cocktail appears in the room
+        else if (value <= 4) // a Molotov Cocktail appears in the room
         {
             aConsumable->setName("Molotov Cocktail");
             room->setItem(aConsumable->clone());
         }
-        else if (value <= 3) // a Smoke Bomb appears in the room
+        else // a Smoke Bomb appears in the room
         {
             aConsumable->setName("Smoke Bomb");
             room->setItem(aConsumable->clone());
-        }
-        else //No consumable in the room
-        {
-            room->setItem(nullptr);
         }
     }
 
@@ -234,25 +225,20 @@ void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
      */
     double value{0};
     value = randomDouble();
-    if (value <= 1) //Goblin appears in the room
+    if (value <= 2) //Goblin appears in the room
     {
         aMonster->setName("Goblin");
         room->setCreature(aMonster->clone());
     }
-    else if (value <= 2) // Werewolf appears in the room
+    else if (value <= 4) // Werewolf appears in the room
     {
         aMonster->setName("Werewolf");
         room->setCreature(aMonster->clone());
     }
-    else if (value <= 3) // Evil Wizard appears in the room
+    else // Evil Wizard appears in the room
     {
         aMonster->setName("Evil Wizard");
         room->setCreature(aMonster->clone());
     }
-    else // No monster in this room
-    {
-        room->setCreature(nullptr);
-    }
-
 }
 

@@ -4,7 +4,7 @@ using core::dungeon::Doorway;
 using core::dungeon::common::OneWayDoor;
 
 OneWayDoor::OneWayDoor(){
-    oneWay = true;
+    oneway = true;
 }
 
 OneWayDoor::~OneWayDoor(){}

@@ -3,7 +3,9 @@
 using core::dungeon::Doorway;
 using core::dungeon::common::BlockedDoorWay;
 
-BlockedDoorWay::BlockedDoorWay(){}
+BlockedDoorWay::BlockedDoorWay(){
+    character = 'X';
+}
 
 BlockedDoorWay::~BlockedDoorWay(){}
 
@@ -13,7 +15,7 @@ std::string BlockedDoorWay::description(){
 
 char BlockedDoorWay::displayCharacter()
 {
-    if(_oppositeDoor->isOneWayDoor()){
+    if(_oppositeDoor->isOneway()){
         return _oppositeDoor->displayCharacter();
     }
     else {

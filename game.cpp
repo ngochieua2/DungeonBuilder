@@ -72,12 +72,23 @@ void Game::createExampleLevel(){
 
     //Build creatures and items
     for(int i = 0; i < dungeon->numberOfRooms(); ++i){
-         _builder->buildCreature(dungeon->retrieveRoom(i+1));
-         _builder->buildItem(dungeon->retrieveRoom(i+1));
+        if (randomDouble() <= 50){
+            _builder->buildCreature(dungeon->retrieveRoom(i+1));
+        }
+        if (randomDouble() <= 50){
+            _builder->buildItem(dungeon->retrieveRoom(i+1));
+        }
+
+
     }
 
 }
 
-DungeonLevel* Game::getDungeon(){
+double Game::randomDouble()
+{
+    return _realDistribution(_randomGenerator);
+}
+
+DungeonLevel* Game::displayLevel(){
     return dungeon;
 }

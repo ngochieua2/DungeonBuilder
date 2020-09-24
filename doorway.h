@@ -26,12 +26,11 @@ public:
 
     void setExit() override;
 
-    bool isOneWayDoor();
-
+    bool isOneway();
 
 protected:
     Doorway *_oppositeDoor{nullptr};
-    bool oneWay{false};
+    bool oneway{false};
 };
 
 }

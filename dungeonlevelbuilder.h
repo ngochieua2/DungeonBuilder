@@ -58,7 +58,7 @@ protected:
     core::items::Consumable *aConsumable{nullptr};
 
     std::mt19937 _randomGenerator{uint32_t(time(nullptr))}; //!< Mersenne Twister random number generator seeded by current time
-    std::uniform_real_distribution<double> _realDistribution{0.0, 4.0}; //!< For random numbers between 0.0 & 3.0
+    std::uniform_real_distribution<double> _realDistribution{0.0, 6.0}; //!< For random numbers between 0.0 & 6.0
 };
 
 }

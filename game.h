@@ -3,6 +3,8 @@
 #include<basicdungeonlevelbuilder.h>
 #include<basicdungeonlevel.h>
 #include<string>
+#include <random>
+#include <ctime>
 
 namespace core
 {
@@ -21,14 +23,14 @@ public:
     void setDungeonType(std::string type);
     void createExampleLevel();
     //createRandomLevel(std::string name, int width, int height)
-    //displayLevel()
-    //double randomDouble()
+
+    double randomDouble();
 
     Game(Game const&) = delete;
     void operator = (Game const&) = delete;
 
 
-    core::dungeon::DungeonLevel* getDungeon();
+    core::dungeon::DungeonLevel* displayLevel();
 
 
 private:
@@ -39,6 +41,8 @@ private:
 
     core::dungeon::DungeonLevel *dungeon;
 
+    std::mt19937 _randomGenerator{uint32_t(time(nullptr))}; //!< Mersenne Twister random number generator seeded by current time
+    std::uniform_real_distribution<double> _realDistribution{0.0, 100.0}; //!< For random numbers between 0.0 & 100.0
 };
 
 }

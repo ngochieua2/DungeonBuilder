@@ -36,9 +36,9 @@ void Doorway::setEntrance(){}
 
 void Doorway::setExit(){}
 
-bool Doorway::isOneWayDoor()
+bool Doorway::isOneway()
 {
-    return oneWay;
+    return oneway;
 }
 
 

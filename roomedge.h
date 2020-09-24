@@ -27,12 +27,10 @@ public:
 
     virtual void setExit();
 
-
 protected:
     bool Entrance{false};
     bool Exit{false};
     char character{};
-
 };
 
 }
