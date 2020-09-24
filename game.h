@@ -23,6 +23,8 @@ public:
 
     void setDungeonType(std::string type);
     void createExampleLevel();
+
+    int randomDoorwayType();
     void createRandomLevel(std::string name, int width, int height, std::string type);
 
     void displayLevel(std::ostream &display);

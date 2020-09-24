@@ -50,6 +50,8 @@ public:
 
     std::vector<std::string> display();
 
+    int doorwayCount();
+
 protected:
     int _id{NULL};
 
@@ -61,6 +63,8 @@ protected:
 
     core::creatures::AbstractCreature *_abstractCreature{nullptr};
     core::items::Item *_item{nullptr};
+
+    int doorwayNumber{0};
 
 };
 

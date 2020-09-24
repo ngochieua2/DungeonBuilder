@@ -265,6 +265,25 @@ std::vector<std::string> Room::display()
     return roomMap;
 }
 
+int Room::doorwayCount()
+{
+    doorwayNumber = 0;
+    if (edgeAt(Room::Direction::North)->isPassage()){
+        doorwayNumber++;
+    }
+    if (edgeAt(Room::Direction::East)->isPassage()){
+        doorwayNumber++;
+    }
+    if (edgeAt(Room::Direction::South)->isPassage()){
+        doorwayNumber++;
+    }
+    if (edgeAt(Room::Direction::West)->isPassage()){
+        doorwayNumber++;
+    }
+
+    return doorwayNumber;
+}
+
 
 
 
