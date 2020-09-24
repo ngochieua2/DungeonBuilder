@@ -100,11 +100,30 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
             dungeon->addRoom(_builder->buildRoom(i+1));
         }
 
+        int range = 2 + width;
+
         /*
          * Build entrance in the west of room 1 or the east of room *width*
          * or the north of room 1 to room *width*
          */
+        for (int i = 1; i < range; ++i){
 
+            if( i == (range - 1)){
+                if(randomDouble() <= 50){
+                    //build entrance in the west of room 1
+                    _builder->buildEntrance(dungeon->retrieveRoom(1),Room::Direction::West);
+                }
+                else //build entrance in the East of room *width*
+                {
+                    _builder->buildEntrance(dungeon->retrieveRoom(width),Room::Direction::East);
+                }
+            }
+            else if(randomDouble() <= 50){
+                //build entrance in the north of first row and then break the loop
+                _builder->buildEntrance(dungeon->retrieveRoom(i),Room::Direction::North);
+                break;
+            }
+        }
 
 
 
@@ -114,22 +133,28 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
          * Build exit in the East of room *widthxheight* or the West of room *widthxheight-width*
          * or the South of room *widthxheight-width* to room *widthxheight*
          */
-
-
-
-
-
-
-
-
+        for (int i = 1; i < range; ++i){
+            if( i == (range - 1)){
+                if(randomDouble() <= 50){
+                    //build exit in the west of first room of last row ((width*height)- width + 1)
+                    _builder->buildEntrance(dungeon->retrieveRoom((width*height)- width + 1),Room::Direction::West);
+                }
+                else //build exit in the west of last room of last row (width*height)
+                {
+                    _builder->buildEntrance(dungeon->retrieveRoom(width*height),Room::Direction::East);
+                }
+            }
+            else if(randomDouble() <= 50){
+                //build exit in the south of last row and then break the loop
+                _builder->buildExit(dungeon->retrieveRoom((width*height)- width + i),Room::Direction::South);
+                break;
+            }
+        }
 
 
 
 
     }
-
-
-
 
 
 

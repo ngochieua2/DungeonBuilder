@@ -66,10 +66,23 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
         }
         output << "What type of dungeon level is it? (b)asic or (m)agical" << std::endl;
         input >> stringInput;
-        while (stringInput != "b" || stringInput != "m") {
-            output << "input should be a (b) or (m)" << std::endl;
-            input >> stringInput;
+        while (true) {
+            if(stringInput == "b" )
+            {
+                break;
+            }
+            else if (stringInput == "m")
+            {
+                break;
+            }
+            else
+            {
+                output << "input should be a (b) or (m)" << std::endl;
+                input >> stringInput;
+            }
         }
+
+        Game::getInstance()->createRandomLevel(name,width,height, stringInput);
 
         viewMenu(output, input);
         return true;
