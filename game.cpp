@@ -17,13 +17,13 @@ Game::~Game(){
 };
 
 void Game::setDungeonType(std::string type){
-    if (type == "basic"){
+    if (type == "b"){
         _builder = new BasicDungeonLevelBuilder();
     }
 }
 
 void Game::createExampleLevel(){
-    setDungeonType("basic");
+    setDungeonType("b");
     _builder->buildungeonLevel("Example Dungeon Level", 3 , 3);
     dungeon = _builder->getDungeonLevel();
 
@@ -78,9 +78,60 @@ void Game::createExampleLevel(){
         if (randomDouble() <= 60){
             _builder->buildItem(dungeon->retrieveRoom(i+1));
         }
+    }
+}
+
+void Game::createRandomLevel(std::string name, int width, int height, std::string type)
+{
+    setDungeonType(type);
+    _builder->buildungeonLevel(name, width , height);
+    dungeon = _builder->getDungeonLevel();
+
+    //random event
+
+    if(dungeon->numberOfRooms() == 1) //event for 1x1 dungeon // special case
+    {
+
+    }
+    else //event for the remaining 2x2, 3x3, 4x4 //normal case
+    {
+        //build room with the given width and height
+        for (int i = 0; i < dungeon->numberOfRooms();++i){
+            dungeon->addRoom(_builder->buildRoom(i+1));
+        }
+
+        /*
+         * Build entrance in the west of room 1 or the east of room *width*
+         * or the north of room 1 to room *width*
+         */
+
+
+
+
+
+
+        /*
+         * Build exit in the East of room *widthxheight* or the West of room *widthxheight-width*
+         * or the South of room *widthxheight-width* to room *widthxheight*
+         */
+
+
+
+
+
+
+
+
+
+
 
 
     }
+
+
+
+
+
 
 }
 
