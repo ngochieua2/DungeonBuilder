@@ -81,14 +81,15 @@ void MenuInterface::viewMenu(std::ostream &output, std::istream &input){
         std::string a;
         input >> a;
         if (a == "d"){
-            output << Game::getInstance()->displayLevel()->description();
+            output << Game::getInstance()->getDungeon()->description();
             explorationMenu(output, input);
         }
         else if (a == "v"){
-            output << Game::getInstance()->displayLevel()->name() << std::endl;
+            output << Game::getInstance()->getDungeon()->name() << std::endl;
             output << std::endl;
 
-            output << Game::getInstance()->displayLevel()->display() << std::endl;
+            //output << Game::getInstance()->getDungeon()->display() << std::endl;
+            Game::getInstance()->displayLevel(output);
         }
         else if (a == "r"){
             output << "return to the main menu\n" << std::endl;
@@ -109,17 +110,17 @@ void MenuInterface::explorationMenu(std::ostream &output, std::istream &input){
         if (a == "d"){
             int number{};
             output << "Which room would you like to describe? (1-" <<
-                      Game::getInstance()->displayLevel()->numberOfRooms() << ")" << std::endl;
+                      Game::getInstance()->getDungeon()->numberOfRooms() << ")" << std::endl;
             input >> number;
-            while (input.fail() ||number > Game::getInstance()->displayLevel()->numberOfRooms() || number < 1) {
-                output << "input should be a number in range 1 to " << Game::getInstance()->displayLevel()->numberOfRooms() << std::endl;
+            while (input.fail() ||number > Game::getInstance()->getDungeon()->numberOfRooms() || number < 1) {
+                output << "input should be a number in range 1 to " << Game::getInstance()->getDungeon()->numberOfRooms() << std::endl;
                 input.clear();
                 input.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 input >> number;
             }
 
             output << "Room *" << number << "* is..." << std::endl;
-            output << Game::getInstance()->displayLevel()->retrieveRoom(number)->description();
+            output << Game::getInstance()->getDungeon()->retrieveRoom(number)->description();
         }
         else if (a == "r"){
             output << "return to the main menu\n" << std::endl;

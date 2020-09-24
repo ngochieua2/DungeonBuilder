@@ -1,11 +1,13 @@
 #ifndef ROOMEDGE_H
 #define ROOMEDGE_H
 #include<string>
-#include<room.h>
+//#include<room.h>
 #include<vector>
 
 namespace core::dungeon
 {
+
+class Room;
 
 class RoomEdge
 {

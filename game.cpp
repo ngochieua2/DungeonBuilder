@@ -72,10 +72,10 @@ void Game::createExampleLevel(){
 
     //Build creatures and items
     for(int i = 0; i < dungeon->numberOfRooms(); ++i){
-        if (randomDouble() <= 50){
+        if (randomDouble() <= 60){
             _builder->buildCreature(dungeon->retrieveRoom(i+1));
         }
-        if (randomDouble() <= 50){
+        if (randomDouble() <= 60){
             _builder->buildItem(dungeon->retrieveRoom(i+1));
         }
 
@@ -84,11 +84,16 @@ void Game::createExampleLevel(){
 
 }
 
+void Game::displayLevel(std::ostream &display)
+{
+    display << dungeon->display();
+}
+
 double Game::randomDouble()
 {
     return _realDistribution(_randomGenerator);
 }
 
-DungeonLevel* Game::displayLevel(){
+DungeonLevel* Game::getDungeon(){
     return dungeon;
 }

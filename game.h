@@ -5,6 +5,7 @@
 #include<string>
 #include <random>
 #include <ctime>
+#include <ostream>
 
 namespace core
 {
@@ -24,13 +25,15 @@ public:
     void createExampleLevel();
     //createRandomLevel(std::string name, int width, int height)
 
+    void displayLevel(std::ostream &display);
+
     double randomDouble();
 
     Game(Game const&) = delete;
     void operator = (Game const&) = delete;
 
 
-    core::dungeon::DungeonLevel* displayLevel();
+    core::dungeon::DungeonLevel* getDungeon();
 
 
 private:

@@ -10,7 +10,7 @@
 namespace core::dungeon
 {
 
-class RoomEdge;
+//class RoomEdge;
 
 class Room
 {
