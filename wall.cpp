@@ -2,9 +2,11 @@
 
 using core::dungeon::Wall;
 
-Wall::Wall(){}
+Wall::Wall()
+{}
 
-Wall::~Wall(){}
+Wall::~Wall()
+{}
 
 std::string Wall::description()
 {

@@ -3,9 +3,12 @@
 using core::dungeon::RoomEdge;
 using core::dungeon::Room;
 
-RoomEdge::RoomEdge(){}
+RoomEdge::RoomEdge()
+{}
 
-RoomEdge::~RoomEdge(){}
+RoomEdge::~RoomEdge()
+{
+}
 
 std::string RoomEdge::description()
 {
@@ -28,12 +31,12 @@ bool RoomEdge::isPassage(){
 }
 
 bool RoomEdge::isEntrance(){
-    return false;
+    return Entrance;
 }
 
 bool RoomEdge::isExit()
 {
-    return false;
+    return Exit;
 }
 
 void RoomEdge::setEntrance(){}

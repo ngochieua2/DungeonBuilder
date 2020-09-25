@@ -541,7 +541,7 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
             }
             else // the remaining room
             {
-                if(randomDouble() <= 25){
+                if(randomDouble() <= 100){
                     _builder->buildCreature(dungeon->retrieveRoom(i));
                 }
                 if(randomDouble() <= 35){
@@ -550,8 +550,6 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
             }
          }
     }
-
-
 
 }
 

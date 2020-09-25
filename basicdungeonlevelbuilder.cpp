@@ -10,10 +10,9 @@ using core::dungeon::basic::BasicDungeonLevelBuilder;
 BasicDungeonLevelBuilder::BasicDungeonLevelBuilder(){}
 
 BasicDungeonLevelBuilder::~BasicDungeonLevelBuilder(){
-    //delete[] _edge;
-    delete[] _wall;
-    delete[] _door;
-    delete[] _oppositeDoor;
+    delete _wall;
+    delete _door;
+    delete _oppositeDoor;
 }
 
 
@@ -215,12 +214,13 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
  * it will be a boss, so it is necessary to check having a exit or not
  */
 
+
 void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 {
     //set boss if this room has exit
     if (room->hasExit())
     {
-        aMonster->setBoss();
+        aMonster->setBoss(true);
     }
 
     /*
@@ -246,5 +246,6 @@ void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
         aMonster->setName("Evil Wizard");
         room->setCreature(aMonster->clone());
     }
+    aMonster->setBoss(false);
 }
 

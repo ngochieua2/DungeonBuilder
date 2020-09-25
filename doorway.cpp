@@ -5,7 +5,7 @@ using core::dungeon::Doorway;
 Doorway::Doorway(){}
 
 Doorway::~Doorway(){
-    delete [] _oppositeDoor;
+    delete _oppositeDoor;
 }
 
 std::string Doorway::description()

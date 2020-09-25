@@ -10,9 +10,9 @@ RockChamber::RockChamber(int id)
 
 RockChamber::~RockChamber()
 {
-    delete[] _roomEdge;
+    delete _roomEdge;
     for (int i = 0; i < (int)EdgesVector.size(); ++ i){
-        delete[] EdgesVector[i];
+        delete EdgesVector[i];
     }
 }
 

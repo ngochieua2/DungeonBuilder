@@ -3,9 +3,12 @@
 using core::dungeon::Doorway;
 using core::dungeon::common::OpenDoorWay;
 
-OpenDoorWay::OpenDoorWay(){}
+OpenDoorWay::OpenDoorWay()
+{}
 
-OpenDoorWay::~OpenDoorWay(){}
+OpenDoorWay::~OpenDoorWay()
+{
+}
 
 
 std::string OpenDoorWay::description(){

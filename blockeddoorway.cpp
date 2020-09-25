@@ -7,7 +7,9 @@ BlockedDoorWay::BlockedDoorWay(){
     character = 'X';
 }
 
-BlockedDoorWay::~BlockedDoorWay(){}
+BlockedDoorWay::~BlockedDoorWay()
+{
+}
 
 std::string BlockedDoorWay::description(){
     return "a Block Door ";
@@ -22,8 +24,6 @@ char BlockedDoorWay::displayCharacter()
         return 'X';
     }
 }
-
-
 
 void BlockedDoorWay::setEntrance(){
     Entrance = false;

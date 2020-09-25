@@ -14,20 +14,40 @@ DungeonLevelBuilder::DungeonLevelBuilder(){
 }
 
 DungeonLevelBuilder::~DungeonLevelBuilder(){
-    delete[] aMonster;
-    delete[] aWeapon;
-    delete[] aConsumable;
+    delete aMonster;
+    delete aWeapon;
+    delete aConsumable;
     delete _Dungeonlevel;
 }
 
-void DungeonLevelBuilder::buildungeonLevel(std::string name,int width, int height){}
-std::shared_ptr<Room> DungeonLevelBuilder::buildRoom(int id){}
-void DungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::shared_ptr<Room> destination, Room::Direction direction, DungeonLevelBuilder::MoveConstraints constraints){}
-void DungeonLevelBuilder::buildEntrance(std::shared_ptr<Room> room, Room::Direction direction){}
-void DungeonLevelBuilder::buildExit(std::shared_ptr<Room> room, Room::Direction direction){}
-void DungeonLevelBuilder::buildItem(std::shared_ptr<Room> room){}
+void DungeonLevelBuilder::buildungeonLevel(std::string name,int width, int height)
+{
+}
 
-void DungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room){}
+std::shared_ptr<Room> DungeonLevelBuilder::buildRoom(int id)
+{
+}
+
+void DungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::shared_ptr<Room> destination,
+                                      Room::Direction direction, DungeonLevelBuilder::MoveConstraints constraints)
+{
+}
+
+void DungeonLevelBuilder::buildEntrance(std::shared_ptr<Room> room, Room::Direction direction)
+{
+}
+
+void DungeonLevelBuilder::buildExit(std::shared_ptr<Room> room, Room::Direction direction)
+{
+}
+
+void DungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
+{
+}
+
+void DungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
+{
+}
 
 
 DungeonLevel *DungeonLevelBuilder::getDungeonLevel()

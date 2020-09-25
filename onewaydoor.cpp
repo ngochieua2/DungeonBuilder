@@ -7,7 +7,9 @@ OneWayDoor::OneWayDoor(){
     oneway = true;
 }
 
-OneWayDoor::~OneWayDoor(){}
+OneWayDoor::~OneWayDoor()
+{
+}
 
 std::string OneWayDoor::description(){
     if (isEntrance()){

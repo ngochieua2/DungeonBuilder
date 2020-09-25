@@ -20,7 +20,7 @@ public:
 
     char displayCharacter();
 
-    void setBoss();
+    void setBoss(bool value);
 
     bool isBoss();
 

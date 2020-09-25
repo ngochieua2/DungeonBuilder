@@ -5,8 +5,11 @@
 using core::MenuInterface;
 using core::Game;
 
-MenuInterface::MenuInterface(){}
-MenuInterface::~MenuInterface(){};
+MenuInterface::MenuInterface()
+{}
+
+MenuInterface::~MenuInterface()
+{}
 
 Game* Game::theInstance= nullptr;
 
@@ -18,6 +21,7 @@ void MenuInterface::welcome(std::ostream &output, std::istream &input, std::stri
     output << "*Press Enter to Continue*";
     input.ignore();
 }
+
 
 bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
 

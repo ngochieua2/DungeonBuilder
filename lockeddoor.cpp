@@ -3,9 +3,12 @@
 using core::dungeon::Doorway;
 using core::dungeon::common::LockedDoor;
 
-LockedDoor::LockedDoor(){}
+LockedDoor::LockedDoor()
+{}
 
-LockedDoor::~LockedDoor(){}
+LockedDoor::~LockedDoor()
+{
+}
 
 std::string LockedDoor::description(){
     return "A Locked Door to another chamber";

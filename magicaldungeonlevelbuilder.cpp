@@ -12,9 +12,9 @@ MagicalDungeonLevelBuilder::MagicalDungeonLevelBuilder()
 }
 
 MagicalDungeonLevelBuilder::~MagicalDungeonLevelBuilder(){
-    delete[] _wall;
-    delete[] _door;
-    delete[] _oppositeDoor;
+    delete _wall;
+    delete _door;
+    delete _oppositeDoor;
 }
 
 void MagicalDungeonLevelBuilder::buildungeonLevel(std::string name,int width, int height)
@@ -214,7 +214,7 @@ void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
     //set boss if this room has exit
     if (room->hasExit())
     {
-        aMonster->setBoss();
+        aMonster->setBoss(true);
     }
 
     /*
@@ -240,5 +240,6 @@ void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
         aMonster->setName("Evil Wizard");
         room->setCreature(aMonster->clone());
     }
+    aMonster->setBoss(false);
 }
 

@@ -5,16 +5,17 @@ using core::items::Item;
 using core::dungeon::Room;
 using core::dungeon::RoomEdge;
 
-Room::Room(){}
+Room::Room()
+{}
 
 Room::Room(int id): _id{id}{
     EdgesVector.assign(4,_roomEdge);
 }
 
 Room::~Room(){
-    delete[] _roomEdge;
+    delete _roomEdge;
     for (int i = 0; i < (int)EdgesVector.size(); ++ i){
-        delete[] EdgesVector[i];
+        delete EdgesVector[i];
     }
     delete _item;
     delete _abstractCreature;
@@ -138,9 +139,9 @@ RoomEdge* Room::edgeAt(Direction direction){
     }
 }
 
-RoomEdge* Room::getRoomEdge(){
-    return _roomEdge;
-}
+//RoomEdge* Room::getRoomEdge(){
+//    return _roomEdge;
+//}
 
 std::string Room::edgeDescription(Room::Direction direction)
 {
@@ -317,12 +318,6 @@ bool Room::hasExit()
     }
     return false;
 }
-
-
-
-
-
-
 
 
 

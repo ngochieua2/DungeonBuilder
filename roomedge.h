@@ -13,7 +13,7 @@ class RoomEdge
 {
 public:
     RoomEdge();
-    ~RoomEdge();
+    virtual ~RoomEdge();
 
     virtual std::string description();
 

@@ -9,9 +9,9 @@ QuartzChamber::QuartzChamber(int id)
 }
 
 QuartzChamber::~QuartzChamber(){
-    delete[] _roomEdge;
+    delete _roomEdge;
     for (int i = 0; i < (int)EdgesVector.size(); ++ i){
-        delete[] EdgesVector[i];
+        delete EdgesVector[i];
     }
 }
 

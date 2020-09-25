@@ -9,7 +9,9 @@ AbstractCreature::AbstractCreature(std::string name): _name{name}
 {}
 
 AbstractCreature::~AbstractCreature()
-{}
+{
+    Boss = false;
+}
 
 void AbstractCreature::setName(std::string name)
 {
@@ -18,7 +20,7 @@ void AbstractCreature::setName(std::string name)
 
 std::string AbstractCreature::name()
 {
-    if (Boss){
+    if (isBoss()){
         return "There is an Elite " + _name + " to fight.\n";
     }
     else {
@@ -31,9 +33,9 @@ char AbstractCreature::displayCharacter()
     return 'M';
 }
 
-void AbstractCreature::setBoss()
+void AbstractCreature::setBoss(bool value)
 {
-    Boss = true;
+    Boss = value;
 }
 
 bool AbstractCreature::isBoss()
