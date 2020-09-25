@@ -2,6 +2,12 @@
 
 using core::dungeon::basic::BasicDungeonLevel;
 
+/*
+ * Constructor BasicDungeonLevel use to get basic information to build
+ * a BasicDungeonLevel
+ * @param name, width, height are name of dungeon, number of columns and
+ * number of rows, respectively
+ */
 BasicDungeonLevel::BasicDungeonLevel(std::string &name, int &width, int &height)
 {
     _name = name;
@@ -9,7 +15,19 @@ BasicDungeonLevel::BasicDungeonLevel(std::string &name, int &width, int &height)
     _height = height;
 }
 
-BasicDungeonLevel::~BasicDungeonLevel(){}
+/*
+ * there is a destructor of BasicDungeonLevel
+ * There is no thing to delete in this class
+ */
+
+BasicDungeonLevel::~BasicDungeonLevel()
+{
+}
+
+/*
+ * Function description uses to print basic information of current
+ * dungeon, including name, size(width, height) and type.
+ */
 
 std::string BasicDungeonLevel::description(){
     return _name +
