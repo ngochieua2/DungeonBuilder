@@ -280,37 +280,126 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                     //build doorway at South
                     if(randomDouble() <= 50) //50% doorway will be build in this side
                     {
-                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at East
                     if(randomDouble() <= 50) //50% doorway will be build in this side
                     {
-                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                 }
             }
             else if(i > width*height - width + 1 && i < width*height) // group of room in the South
             {
-
+                while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
+                {
+                    //build doorway at West
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at North
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at East
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                }
             }
             else if(i % width == 1) // group of room in the West
             {
-
+                while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
+                {
+                    //build doorway at South
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at North
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at East
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                }
             }
             else if(i % width == 0) // group of room in the East
             {
-
+                while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
+                {
+                    //build doorway at South
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at North
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at West
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                }
             }
             else // the remaining room
             {
-
+                while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
+                {
+                    //build doorway at South
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at North
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at West
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                    //build doorway at East
+                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    {
+                        _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
+                                              static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
+                    }
+                }
             }
-
-
-
         }
+
+
+        /*
+         * Build monster and Item
+         */
+
 
     }
 
