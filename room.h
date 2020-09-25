@@ -52,6 +52,9 @@ public:
 
     int doorwayCount();
 
+    bool hasEntrance();
+    bool hasExit();
+
 protected:
     int _id{NULL};
 

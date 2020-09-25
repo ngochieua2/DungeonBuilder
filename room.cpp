@@ -284,6 +284,40 @@ int Room::doorwayCount()
     return doorwayNumber;
 }
 
+bool Room::hasEntrance()
+{
+    if (edgeAt(Room::Direction::North)->isEntrance()){
+        return true;
+    }
+    if (edgeAt(Room::Direction::East)->isEntrance()){
+        return true;
+    }
+    if (edgeAt(Room::Direction::South)->isEntrance()){
+        return true;
+    }
+    if (edgeAt(Room::Direction::West)->isEntrance()){
+        return true;
+    }
+    return false;
+}
+
+bool Room::hasExit()
+{
+    if (edgeAt(Room::Direction::North)->isExit()){
+        return true;
+    }
+    if (edgeAt(Room::Direction::East)->isExit()){
+        return true;
+    }
+    if (edgeAt(Room::Direction::South)->isExit()){
+        return true;
+    }
+    if (edgeAt(Room::Direction::West)->isExit()){
+        return true;
+    }
+    return false;
+}
+
 
 
 

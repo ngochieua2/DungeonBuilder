@@ -144,7 +144,6 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
         }
 
         int range = 2 + width;
-        double randomValue{0};
 
         /*
          * Build entrance in the west of room 1 or the east of room *width*
@@ -397,10 +396,32 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
 
 
         /*
-         * Build monster and Item
+         * Build monster and item
+         * There is a 25% chance that a room will contain a Monster.
+         * There is a 35% chance that a room will contain an Item
+         * The room with the exit must always contain a Monster (that is a 'boss') and an Item.
+         * The room with the entrance must not have a Monster nor an Item
          */
-
-
+         for(int i = 1; i<= width*height; ++i){
+            if(dungeon->retrieveRoom(i)->hasEntrance()) // find the room has entrance
+            {
+                // donot build monster and item
+            }
+            else if(dungeon->retrieveRoom(i)->hasExit()) // find the room has item
+            {
+                _builder->buildCreature(dungeon->retrieveRoom(i));
+                _builder->buildItem(dungeon->retrieveRoom(i));
+            }
+            else // the remaining room
+            {
+                if(randomDouble() <= 25){
+                    _builder->buildCreature(dungeon->retrieveRoom(i));
+                }
+                if(randomDouble() <= 35){
+                    _builder->buildItem(dungeon->retrieveRoom(i));
+                }
+            }
+         }
     }
 
 

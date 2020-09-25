@@ -144,14 +144,19 @@ void BasicDungeonLevelBuilder::buildExit(std::shared_ptr<Room> room, Room::Direc
     room->setEdge(_door,direction);
 }
 
+/*
+ * there is 65% chance that the Item is a Consumable and a 35% chance that it is a Weapon.
+ * Random number range is 0.0 to 6.0
+ * So, when random number < 6*35% = 2.1, weapon will appear in this room
+ * And the remaining random number will respond consumable
+ * Only a weapon or a consumable can appear in a room
+ */
+
 void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
 {
-    /*
-     * Only a weapon or a consumable can appear in a room
-     */
     double value{0};
 
-    if (randomDouble() <= 3)
+    if (randomDouble() <= 2.1)
     /*
      * A weapon may appears in this room, including:
      * - Boomerang
@@ -160,17 +165,17 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
      */
     {
         value = randomDouble();
-        if(value <= 2) // a boomerang appears in the room
+        if(value <= 2) // a boomerang appears in the room (2/6 = 1/3 chance)
         {
             aWeapon->setName("Boomerang");
             room->setItem(aWeapon->clone());
         }
-        else if (value <= 4) // a Short Sword appears in the room
+        else if (value <= 4) // a Short Sword appears in the room (1/3 chance)
         {
             aWeapon->setName("Short Sword");
             room->setItem(aWeapon->clone());
         }
-        else // a Battle Axe appears in the room
+        else // a Battle Axe appears in the room (1/3 chance)
         {
             aWeapon->setName("Battle Axe");
             room->setItem(aWeapon->clone());
@@ -185,17 +190,17 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
      */
     {
         value = randomDouble();
-        if(value <= 2) // a Health Potion appears in the room
+        if(value <= 2) // a Health Potion appears in the room (2/6 = 1/3 chance)
         {
             aConsumable->setName("Health Potion");
             room->setItem(aConsumable->clone());
         }
-        else if (value <= 4) // a Molotov Cocktail appears in the room
+        else if (value <= 4) // a Molotov Cocktail appears in the room (1/3 chance)
         {
             aConsumable->setName("Molotov Cocktail");
             room->setItem(aConsumable->clone());
         }
-        else // a Smoke Bomb appears in the room
+        else // a Smoke Bomb appears in the room (1/3 chance)
         {
             aConsumable->setName("Smoke Bomb");
             room->setItem(aConsumable->clone());
@@ -204,20 +209,21 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
 
 }
 
+/*
+ * Only one monster can appear in a room
+ * The room with exit, if monster appear on it,
+ * it will be a boss, so it is necessary to check having a exit or not
+ */
+
 void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 {
     //set boss if this room has exit
-    if (room->edgeAt(Room::Direction::North)->isExit() ||
-        room->edgeAt(Room::Direction::South)->isExit() ||
-        room->edgeAt(Room::Direction::East)->isExit() ||
-        room->edgeAt(Room::Direction::West)->isExit())
+    if (room->hasExit())
     {
         aMonster->setBoss();
     }
 
-
     /*
-     * Only one monster can appear in a room
      * There are three monsters type in Basic dungeon level
      * - Goblin
      * - Werewolf
@@ -225,17 +231,17 @@ void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
      */
     double value{0};
     value = randomDouble();
-    if (value <= 2) //Goblin appears in the room
+    if (value <= 2) //Goblin appears in the room (2/6 = 1/3 chance)
     {
         aMonster->setName("Goblin");
         room->setCreature(aMonster->clone());
     }
-    else if (value <= 4) // Werewolf appears in the room
+    else if (value <= 4) // Werewolf appears in the room (1/3 chance)
     {
         aMonster->setName("Werewolf");
         room->setCreature(aMonster->clone());
     }
-    else // Evil Wizard appears in the room
+    else // Evil Wizard appears in the room (1/3 chance)
     {
         aMonster->setName("Evil Wizard");
         room->setCreature(aMonster->clone());
