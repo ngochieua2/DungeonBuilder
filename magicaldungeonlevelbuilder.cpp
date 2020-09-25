@@ -159,50 +159,44 @@ void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
     if (randomDouble() <= 2.1)
     /*
      * A weapon may appears in this room, including:
-     * - Boomerang
-     * - Short Sword
-     * - Battle Axe
+     * - Wizard's staff
+     * - Magic Wand
      */
     {
         value = randomDouble();
-        if(value <= 2) // a boomerang appears in the room (2/6 = 1/3 chance)
+        if(value <= 3) // a Wizard's staff appears in the room (1/2 chance)
         {
-            aWeapon->setName("Boomerang");
+            aWeapon->setName("Wizard's staff");
             room->setItem(aWeapon->clone());
         }
-        else if (value <= 4) // a Short Sword appears in the room (1/3 chance)
+        else // a Magic Wand appears in the room (1/2 chance)
         {
-            aWeapon->setName("Short Sword");
-            room->setItem(aWeapon->clone());
-        }
-        else // a Battle Axe appears in the room (1/3 chance)
-        {
-            aWeapon->setName("Battle Axe");
+            aWeapon->setName("Magic Wand");
             room->setItem(aWeapon->clone());
         }
     }
     else
     /*
      * A consumable may appears in this room, including:
-     * - Health Potion
+     * - Heath Potion
      * - Molotov Cocktail
-     * - Smoke Bomb
+     * - Resistance Potion
      */
     {
         value = randomDouble();
-        if(value <= 2) // a Health Potion appears in the room (2/6 = 1/3 chance)
+        if(value <= 2) // a Wizard's staff appears in the room (1/3 chance)
         {
-            aConsumable->setName("Health Potion");
+            aConsumable->setName("Heath Potion");
             room->setItem(aConsumable->clone());
         }
-        else if (value <= 4) // a Molotov Cocktail appears in the room (1/3 chance)
+        else if (value <= 4) // a Wizard's staff appears in the room (1/3 chance)
         {
             aConsumable->setName("Molotov Cocktail");
             room->setItem(aConsumable->clone());
         }
-        else // a Smoke Bomb appears in the room (1/3 chance)
+        else // a Magic Wand appears in the room (1/3 chance)
         {
-            aConsumable->setName("Smoke Bomb");
+            aConsumable->setName("Resistance Potion");
             room->setItem(aConsumable->clone());
         }
     }
@@ -226,7 +220,7 @@ void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
     /*
      * There are three monsters type in Basic dungeon level
      * - Goblin
-     * - Werewolf
+     * - Dragon
      * - Evil Wizard
      */
     double value{0};
@@ -238,7 +232,7 @@ void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
     }
     else if (value <= 4) // Werewolf appears in the room (1/3 chance)
     {
-        aMonster->setName("Werewolf");
+        aMonster->setName("Dragon");
         room->setCreature(aMonster->clone());
     }
     else // Evil Wizard appears in the room (1/3 chance)
