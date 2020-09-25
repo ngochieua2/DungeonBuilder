@@ -15,10 +15,6 @@ BasicDungeonLevel::BasicDungeonLevel(std::string &name, int &width, int &height)
     _height = height;
 }
 
-/*
- * there is a destructor of BasicDungeonLevel
- * There is no thing to delete in this class
- */
 
 BasicDungeonLevel::~BasicDungeonLevel()
 {
