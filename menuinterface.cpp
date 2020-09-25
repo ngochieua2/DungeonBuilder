@@ -28,8 +28,11 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
 
 
     std::string stringInput;
+    std::fflush(stdin);
+    std::getline(input, stringInput);
+    std::transform(stringInput.begin(), stringInput.end(), stringInput.begin(),
+                   [](unsigned char c){return std::tolower(c);});
 
-    input >> stringInput;
     if ( stringInput == "g"){
         output << "Creating Example Dungeon Level..." << std::endl;
         output << "Dungeon level created!\n" << std::endl;
@@ -45,7 +48,8 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
         int width{0};
         int height{0};
         output << "What would you like to call the level?" << std::endl;
-        input >> name;
+        std::fflush(stdin);
+        std::getline(input, name);
         output << "How many rows in *"+name+"*?" << std::endl;
         input >> height;
         while (input.fail() ||height > 4 || height < 1) {
@@ -65,24 +69,27 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
             input >> width;
         }
         output << "What type of dungeon level is it? (b)asic or (m)agical" << std::endl;
-        input >> stringInput;
+        std::string dungeonType{NULL};
+        std::fflush(stdin);
+        std::getline(input, dungeonType);
         while (true) {
-            if(stringInput == "b" )
+            if(dungeonType == "b" )
             {
                 break;
             }
-            else if (stringInput == "m")
+            else if (dungeonType == "m")
             {
                 break;
             }
             else
             {
                 output << "input should be a (b) or (m)" << std::endl;
-                input >> stringInput;
+                std::fflush(stdin);
+                std::getline(input, dungeonType);
             }
         }
 
-        Game::getInstance()->createRandomLevel(name,width,height, stringInput);
+        Game::getInstance()->createRandomLevel(name,width,height, dungeonType);
 
         viewMenu(output, input);
         return true;
@@ -91,7 +98,10 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
     else if ( stringInput == "q"){
        while (true){
            output << "*Are you sure you want to quit? (y/n)*" << std::endl;
-           input >> stringInput;
+           std::fflush(stdin);
+           std::getline(input, stringInput);
+           std::transform(stringInput.begin(), stringInput.end(), stringInput.begin(),
+                          [](unsigned char c){return std::tolower(c);});
            if (stringInput == "y"){
                output << "Goodbye!" << std::endl;
                //quit = true;
@@ -123,7 +133,10 @@ void MenuInterface::viewMenu(std::ostream &output, std::istream &input){
         output << " (r)eturn to the main menu" << std::endl;
 
         std::string stringInput;
-        input >> stringInput;
+        std::fflush(stdin);
+        std::getline(input, stringInput);
+        std::transform(stringInput.begin(), stringInput.end(), stringInput.begin(),
+                       [](unsigned char c){return std::tolower(c);});
         if (stringInput == "d"){
             output << Game::getInstance()->getDungeon()->description();
             explorationMenu(output, input);
@@ -150,7 +163,10 @@ void MenuInterface::explorationMenu(std::ostream &output, std::istream &input){
         output << " (r)eturn to to previous menu" << std::endl;
 
         std::string stringInput;
-        input >> stringInput;
+        std::fflush(stdin);
+        std::getline(input, stringInput);
+        std::transform(stringInput.begin(), stringInput.end(), stringInput.begin(),
+                       [](unsigned char c){return std::tolower(c);});
         if (stringInput == "d"){
             int number{};
             output << "Which room would you like to describe? (1-" <<
