@@ -1,8 +1,10 @@
 #ifndef GAME_H
 #define GAME_H
-#include<basicdungeonlevelbuilder.h>
-#include<basicdungeonlevel.h>
-#include<string>
+#include <basicdungeonlevelbuilder.h>
+#include <basicdungeonlevel.h>
+#include <magicaldungeonlevelbuilder.h>
+#include <magicaldungeonlevel.h>
+#include <string>
 #include <random>
 #include <ctime>
 #include <ostream>

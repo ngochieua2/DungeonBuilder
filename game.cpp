@@ -6,6 +6,7 @@ using core::dungeon::Room;
 using core::dungeon::DungeonLevelBuilder;
 using core::dungeon::DungeonLevel;
 using core::dungeon::basic::BasicDungeonLevelBuilder;
+using core::dungeon::magical::MagicalDungeonLevelBuilder;
 
 
 Game::Game(){
@@ -19,6 +20,9 @@ Game::~Game(){
 void Game::setDungeonType(std::string type){
     if (type == "b"){
         _builder = new BasicDungeonLevelBuilder();
+    }
+    if (type == "m"){
+        _builder = new MagicalDungeonLevelBuilder();
     }
 }
 
@@ -231,8 +235,6 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                                        static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
              }
         }
-
-
 
         /*
          * Build monster and item

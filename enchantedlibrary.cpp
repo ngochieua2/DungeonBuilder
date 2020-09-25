@@ -1,14 +1,14 @@
-#include "rockchamber.h"
+#include "enchantedlibrary.h"
 
-using core::dungeon::basic::RockChamber;
+using core::dungeon::magical::EnchantedLibrary;
 
-RockChamber::RockChamber(int id)
+EnchantedLibrary::EnchantedLibrary(int id)
 {
     _id = id;
     EdgesVector.assign(4,_roomEdge);
 }
 
-RockChamber::~RockChamber()
+EnchantedLibrary::~EnchantedLibrary()
 {
     delete[] _roomEdge;
     for (int i = 0; i < (int)EdgesVector.size(); ++ i){
@@ -16,7 +16,7 @@ RockChamber::~RockChamber()
     }
 }
 
-std::string RockChamber::description(){
+std::string EnchantedLibrary::description(){
     return "A chamber that glitters like a thousand stars in the tourch light. (Rock Chamber)\n"
            "To the NORTH is " + edgeDescription(Direction::North)+ "\n"
            "To the SOUTH is " + edgeDescription(Direction::South)+ "\n"

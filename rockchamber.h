@@ -3,7 +3,8 @@
 #include <room.h>
 #include <string>
 
-namespace core::dungeon::basic{
+namespace core::dungeon::basic
+{
 
 class RockChamber : public Room
 {

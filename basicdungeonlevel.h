@@ -1,7 +1,7 @@
 #ifndef BASICDUNGEONLEVEL_H
 #define BASICDUNGEONLEVEL_H
-#include<dungeonlevel.h>
-#include<string>
+#include <dungeonlevel.h>
+#include <string>
 
 namespace core::dungeon::basic
 {

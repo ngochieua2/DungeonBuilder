@@ -1,23 +1,21 @@
-#include "rockchamber.h"
+#include "alchemistslaboratory.h"
 
-using core::dungeon::basic::RockChamber;
+using core::dungeon::magical::AlchemistsLaboratory;
 
-RockChamber::RockChamber(int id)
+AlchemistsLaboratory::AlchemistsLaboratory(int id)
 {
     _id = id;
     EdgesVector.assign(4,_roomEdge);
 }
-
-RockChamber::~RockChamber()
-{
-    delete[] _roomEdge;
+AlchemistsLaboratory::~AlchemistsLaboratory(){
+    delete [] _roomEdge;
     for (int i = 0; i < (int)EdgesVector.size(); ++ i){
         delete[] EdgesVector[i];
     }
 }
 
-std::string RockChamber::description(){
-    return "A chamber that glitters like a thousand stars in the tourch light. (Rock Chamber)\n"
+std::string AlchemistsLaboratory::description(){
+    return "A chamber that glitters like a thousand stars in the tourch light. (Alchemists Laboratory)\n"
            "To the NORTH is " + edgeDescription(Direction::North)+ "\n"
            "To the SOUTH is " + edgeDescription(Direction::South)+ "\n"
            "To the EAST is " + edgeDescription(Direction::East)+ "\n"
