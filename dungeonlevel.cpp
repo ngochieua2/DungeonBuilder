@@ -42,7 +42,7 @@ std::string DungeonLevel::description(){
 
 std::string DungeonLevel::display()
 {
-
+    dungeonMap = "";
     for(int i = 0; i < numberOfRooms(); i = i + width())
     {
         for(int j = 0; j < 6; ++j)

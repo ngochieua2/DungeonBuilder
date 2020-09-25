@@ -130,10 +130,38 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
     _builder->buildungeonLevel(name, width , height);
     dungeon = _builder->getDungeonLevel();
 
-    //random event
+    /*
+     * random event
+     * there are 2 cases: 1x1 and the rest
+     *
+     */
 
     if(dungeon->numberOfRooms() == 1) //event for 1x1 dungeon // special case
     {
+        Room::Direction usedDirection{};
+
+        //build entrance
+        if (randomDouble() <= 25)
+        {
+
+        }
+        else if (randomDouble() <= 50)
+        {
+
+        }
+        else if (randomDouble() <=75)
+        {
+
+        }
+        else
+        {
+
+        }
+        //build exit
+
+        //build creature and item
+
+
 
     }
     else //event for the remaining 2x2, 3x3, 4x4 //normal case
