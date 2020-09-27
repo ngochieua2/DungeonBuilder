@@ -34,7 +34,8 @@ char BlockedDoorWay::displayCharacter()
 
 
 /*
- * if it is BlockedDoorway, it will not entrance or exit
+ * if it is BlockedDoorway,
+ * it will not entrance or exit
  */
 void BlockedDoorWay::setEntrance(){
     Entrance = false;

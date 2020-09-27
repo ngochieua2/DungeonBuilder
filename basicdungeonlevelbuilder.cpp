@@ -25,7 +25,7 @@ BasicDungeonLevelBuilder::~BasicDungeonLevelBuilder(){
 
 
 /*
- * Function buildungeonLevel is used to create new object of BasicDungeonLevel
+ * Function buildungeonLevel uses to create s new BasicDungeonLevel
  * Parameter will transfer into new object
  * @param name, width, height are name of dungeon, number of columns and
  * number of rows, respectively
@@ -266,7 +266,7 @@ void BasicDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
  * Only one monster can appear in a room
  * The room have monster and exit will contain boss
  * After set monster become boss, clone and add it to room, it need
- * to convert to normal boss to make sure clone of object will
+ * to convert to normal to make sure next clone of object will
  * be a normal monster in other room
  * There is 1/3 chance to appear a type of monster
  * @param room is the room will have monster

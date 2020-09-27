@@ -9,15 +9,24 @@ using core::dungeon::basic::BasicDungeonLevelBuilder;
 using core::dungeon::magical::MagicalDungeonLevelBuilder;
 
 
-Game::Game(){
+Game::Game()
+{
 }
 
-Game::~Game(){
+Game::~Game()
+{
     delete _builder;
     delete dungeon;
 };
 
-void Game::setDungeonType(std::string type){
+
+/*
+ * Function setDungeonType is used to create dungeon type
+ * depending on players
+ * @param type is symbol of dungeon type
+ */
+void Game::setDungeonType(std::string type)
+{
     if (type == "b"){
         _builder = new BasicDungeonLevelBuilder();
     }
@@ -26,12 +35,20 @@ void Game::setDungeonType(std::string type){
     }
 }
 
-void Game::createExampleLevel(){
+
+/*
+ * Function createExampleLevel will build the given example dungeon
+ * the map will not be change but item and creature will appear randomly
+ * with 60% chance for both
+ */
+void Game::createExampleLevel()
+{
+    //Set up for dungeon
     setDungeonType("b");
     _builder->buildungeonLevel("Example Dungeon Level", 3 , 3);
     dungeon = _builder->getDungeonLevel();
 
-    //Build room by width and height
+    //Build all rooms by width and height
     for(int i = 0; i < dungeon->numberOfRooms(); ++i){
          dungeon->addRoom(_builder->buildRoom(i+1));
     }
@@ -85,6 +102,12 @@ void Game::createExampleLevel(){
     }
 }
 
+
+/*
+ * Function randomDoorwayType uses to select doorway type randomly
+ * with 30% is locked door, 30% is impassable door and 40% is
+ * traversable door
+ */
 int Game::randomDoorwayType()
 {
     int randomValue = randomDouble();
