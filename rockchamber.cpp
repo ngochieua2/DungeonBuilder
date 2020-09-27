@@ -17,7 +17,7 @@ RockChamber::~RockChamber()
 }
 
 std::string RockChamber::description(){
-    return "A chamber that glitters like a thousand stars in the tourch light. (Rock Chamber)\n"
+    return "A chamber is dark and supper cold. (Rock Chamber)\n"
            "To the NORTH is " + edgeDescription(Direction::North)+ "\n"
            "To the SOUTH is " + edgeDescription(Direction::South)+ "\n"
            "To the EAST is " + edgeDescription(Direction::East)+ "\n"

@@ -3,10 +3,12 @@
 using core::items::Weapon;
 
 Weapon::Weapon()
-{}
+{
+}
 
 Weapon::~Weapon()
-{}
+{
+}
 
 Weapon *Weapon::clone()
 {

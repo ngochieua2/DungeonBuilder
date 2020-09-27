@@ -44,7 +44,6 @@ std::shared_ptr<Room> MagicalDungeonLevelBuilder::buildRoom(int id){
     Aroom->setEdge(_wall, Room::Direction::West);
 
     return Aroom;
-
 }
 
 void MagicalDungeonLevelBuilder::builDoorway(std::shared_ptr<Room> origin, std::shared_ptr<Room> destination,
@@ -159,17 +158,17 @@ void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
     if (randomDouble() <= 2.1)
     /*
      * A weapon may appears in this room, including:
-     * - Wizard's staff
-     * - Magic Wand
+     * - Wizard's staff (1/2 chance)
+     * - Magic Wand (1/2 chance)
      */
     {
         value = randomDouble();
-        if(value <= 3) // a Wizard's staff appears in the room (1/2 chance)
+        if(value <= 3)
         {
             aWeapon->setName("Wizard's staff");
             room->setItem(aWeapon->clone());
         }
-        else // a Magic Wand appears in the room (1/2 chance)
+        else
         {
             aWeapon->setName("Magic Wand");
             room->setItem(aWeapon->clone());
@@ -178,29 +177,28 @@ void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
     else
     /*
      * A consumable may appears in this room, including:
-     * - Heath Potion
-     * - Molotov Cocktail
-     * - Resistance Potion
+     * - Heath Potion (1/3 chance)
+     * - Molotov Cocktail (1/3 chance)
+     * - Resistance Potion (1/3 chance)
      */
     {
         value = randomDouble();
-        if(value <= 2) // a Wizard's staff appears in the room (1/3 chance)
+        if(value <= 2)
         {
             aConsumable->setName("Heath Potion");
             room->setItem(aConsumable->clone());
         }
-        else if (value <= 4) // a Wizard's staff appears in the room (1/3 chance)
+        else if (value <= 4)
         {
             aConsumable->setName("Molotov Cocktail");
             room->setItem(aConsumable->clone());
         }
-        else // a Magic Wand appears in the room (1/3 chance)
+        else
         {
             aConsumable->setName("Resistance Potion");
             room->setItem(aConsumable->clone());
         }
     }
-
 }
 
 /*
@@ -208,7 +206,6 @@ void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
  * The room with exit, if monster appear on it,
  * it will be a boss, so it is necessary to check having a exit or not
  */
-
 void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 {
     //set boss if this room has exit
@@ -219,27 +216,26 @@ void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 
     /*
      * There are three monsters type in Basic dungeon level
-     * - Goblin
-     * - Dragon
-     * - Evil Wizard
+     * - Goblin (1/3 chance)
+     * - Dragon (1/3 chance)
+     * - Evil Wizard (1/3 chance)
      */
     double value{0};
     value = randomDouble();
-    if (value <= 2) //Goblin appears in the room (2/6 = 1/3 chance)
+    if (value <= 2)
     {
         aMonster->setName("Goblin");
         room->setCreature(aMonster->clone());
     }
-    else if (value <= 4) // Werewolf appears in the room (1/3 chance)
+    else if (value <= 4)
     {
         aMonster->setName("Dragon");
         room->setCreature(aMonster->clone());
     }
-    else // Evil Wizard appears in the room (1/3 chance)
+    else
     {
         aMonster->setName("Evil Wizard");
         room->setCreature(aMonster->clone());
     }
     aMonster->setBoss(false);
 }
-

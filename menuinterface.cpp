@@ -19,7 +19,7 @@ MenuInterface::~MenuInterface()
 Game* Game::theInstance= nullptr;
 
 void MenuInterface::welcome(std::ostream &output, std::istream &input, std::string title, std::string author){
-    // Intro
+
     output << "Welcome to: " << title << std::endl;
     output << "Developed by " << author << std::endl;
     output << "COMP 3023 Software Development with C++\n" << std::endl;
@@ -35,7 +35,6 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
     output << " (r)andom dungeon level" << std::endl;
     output << " (q)uit" << std::endl;
 
-
     std::string stringInput;
     std::fflush(stdin);
     std::getline(input, stringInput);
@@ -50,7 +49,6 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
 
         viewMenu(output, input);
         return true;
-        //break;
     }
     else if (stringInput == "r"){
         std::string name;
@@ -102,7 +100,6 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
 
         viewMenu(output, input);
         return true;
-        //break;
     }
     else if ( stringInput == "q"){
        while (true){
@@ -113,7 +110,6 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
                           [](unsigned char c){return std::tolower(c);});
            if (stringInput == "y"){
                output << "Goodbye!" << std::endl;
-               //quit = true;
                return false;
                break;
            }
@@ -124,14 +120,11 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
            }
            else output << "Unvalid option, please choose again!\n" << std::endl;
        }
-       //break;
     }
     else {
         output << "Unvalid option, please choose again!\n" << std::endl;
         return true;
     }
-
-
 }
 
 void MenuInterface::viewMenu(std::ostream &output, std::istream &input){
@@ -202,7 +195,6 @@ void MenuInterface::explorationMenu(std::ostream &output, std::istream &input){
 
 void MenuInterface::run(std::ostream &output, std::istream &input){
 
-    //mainMenu(output, input);
     while (true) {
         if (!mainMenu(output, input)) break;
     }

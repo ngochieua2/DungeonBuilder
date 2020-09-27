@@ -20,8 +20,6 @@ DungeonLevelBuilder::~DungeonLevelBuilder(){
     delete _Dungeonlevel;
 }
 
-
-
 void DungeonLevelBuilder::buildungeonLevel(std::string name,int width, int height)
 {
 }
@@ -51,14 +49,10 @@ void DungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 {
 }
 
-
-
 DungeonLevel *DungeonLevelBuilder::getDungeonLevel()
 {
     return _Dungeonlevel;
 }
-
-
 
 Room::Direction DungeonLevelBuilder::getOppositeDirection(Room::Direction direction)
 {
@@ -76,12 +70,7 @@ Room::Direction DungeonLevelBuilder::getOppositeDirection(Room::Direction direct
     }
 }
 
-
-
 double DungeonLevelBuilder::randomDouble()
 {
     return _realDistribution(_randomGenerator);
 }
-
-
-

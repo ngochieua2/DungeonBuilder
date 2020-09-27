@@ -40,9 +40,13 @@ bool RoomEdge::isExit()
     return Exit;
 }
 
-void RoomEdge::setEntrance(){}
+void RoomEdge::setEntrance()
+{
+}
 
-void RoomEdge::setExit(){}
+void RoomEdge::setExit()
+{
+}
 
 
 

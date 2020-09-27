@@ -23,7 +23,6 @@ std::string OneWayDoor::description(){
     }
 }
 
-
 void OneWayDoor::setEntrance(){
     Entrance = true;
 }

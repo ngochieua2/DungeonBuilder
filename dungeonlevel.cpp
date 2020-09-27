@@ -7,7 +7,7 @@ DungeonLevel::DungeonLevel()
 {
 }
 
-DungeonLevel::DungeonLevel(std::string &name, int &width, int &height)
+DungeonLevel::DungeonLevel(std::string name, int width, int height)
     : _name{name}, _width{width}, _height{height}
 {
 }
@@ -62,7 +62,7 @@ std::string DungeonLevel::display()
                     }
                     else {
                         dungeonMap += retrieveRoom(k+i)->display().at(j);
-                        dungeonMap += "  ";
+                        dungeonMap += "  "; // 2 chars
                     }
                }
                else if (j == 5) // check connection in the south
@@ -80,7 +80,6 @@ std::string DungeonLevel::display()
                    dungeonMap += retrieveRoom(k+i)->display().at(j);
                    dungeonMap += "  ";
                }
-
            }
            dungeonMap += "\n";
         }

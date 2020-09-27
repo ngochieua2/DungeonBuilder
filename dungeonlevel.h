@@ -14,7 +14,7 @@ public:
 
     DungeonLevel();
 
-    DungeonLevel(std::string &name, int &width, int &height);
+    DungeonLevel(std::string name, int width, int height);
 
     DungeonLevel(const DungeonLevel &other) = default;
 

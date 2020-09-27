@@ -27,7 +27,6 @@ std::string Room::description()
     return "a room\n";
 }
 
-
 int Room::id(){
     return _id;
 }
@@ -259,7 +258,6 @@ std::vector<std::string> Room::display()
             row = "";
         }
     }
-
     return roomMap;
 }
 
@@ -278,7 +276,6 @@ int Room::doorwayCount()
     if (edgeAt(Room::Direction::West)->isPassage()){
         doorwayNumber++;
     }
-
     return doorwayNumber;
 }
 

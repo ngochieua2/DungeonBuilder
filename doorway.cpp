@@ -45,8 +45,6 @@ bool Doorway::isOneway()
     return oneway;
 }
 
-
-
 bool Doorway::isPassage(){
     if(isEntrance() || isExit()){
         return false;
@@ -54,5 +52,4 @@ bool Doorway::isPassage(){
     else {
         return true;
     }
-
 }

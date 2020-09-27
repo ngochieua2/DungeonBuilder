@@ -3,10 +3,12 @@
 using core::creatures::Monster;
 
 Monster::Monster()
-{}
+{
+}
 
 Monster::~Monster()
-{}
+{
+}
 
 Monster *Monster::clone()
 {

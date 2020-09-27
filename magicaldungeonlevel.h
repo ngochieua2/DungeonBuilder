@@ -16,7 +16,7 @@ public:
      * @param name, width, height are name of dungeon, number of columns and
      * number of rows, respectively
      */
-    MagicalDungeonLevel(std::string &name, int &width, int &height);
+    MagicalDungeonLevel(std::string name, int width, int height);
 
     ~MagicalDungeonLevel();
 

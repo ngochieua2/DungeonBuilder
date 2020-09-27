@@ -145,13 +145,12 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
 
     /*
      * random event
-     * there are 2 cases: 1x1 and the rest
-     *
+     * there are 2 cases: 1 width, 1 height or both and the rest
      */
     int range = width + 1;
-    if(height == 1 || width == 1) //event for 1x1 dungeon // special case
-    {
 
+    if(height == 1 || width == 1) //event for 1 width, 1 height or both dungeon
+    {
         //build entrance
         for (int i = 1; i <= range; ++i){
             if( i == range){
@@ -179,7 +178,6 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 }
             }
         }
-
 
         //build exit
         for (int i = 1; i <= range; ++i){
@@ -260,9 +258,8 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
             }
          }
     }
-    else //event for the remaining 2x2, 2x3, 3x3, 4x4... //normal case
+    else //event for the remaining 2x2, 2x3, 3x3, 4x4...
     {
-
         /*
          * Build entrance in the west of room 1 or the east of room *width*
          * or the north of room 1 to room *width*
@@ -511,7 +508,6 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 }
             }
         }
-
 
         /*
          * Build monster and item

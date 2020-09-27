@@ -2,7 +2,7 @@
 
 using core::dungeon::magical::MagicalDungeonLevel;
 
-MagicalDungeonLevel::MagicalDungeonLevel(std::string &name, int &width, int &height)
+MagicalDungeonLevel::MagicalDungeonLevel(std::string name, int width, int height)
 {
     _name = name;
     _width = width;
