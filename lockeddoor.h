@@ -16,6 +16,10 @@ public:
 
      char displayCharacter() override;
 
+     /*
+      * if it is LockedDoor,
+      * it will not entrance or exit
+      */
      void setEntrance()override;
 
      void setExit() override;

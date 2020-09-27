@@ -21,12 +21,7 @@ DungeonLevelBuilder::~DungeonLevelBuilder(){
 }
 
 
-/*
- * buildungeonLevel, buildRoom, builDoorway, buildEntrance,
- * buildExit, buildItem, buildCreature is virtual function
- * So, they will be override in BasicDungeonLevelBuilder and
- * MagicalDungeonLevelBuilder. In this class, they could be empty
- */
+
 void DungeonLevelBuilder::buildungeonLevel(std::string name,int width, int height)
 {
 }
@@ -57,20 +52,14 @@ void DungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 }
 
 
-/*
- * Function getDungeonLevel uses to get the result or
- * product after building in builder design
- */
+
 DungeonLevel *DungeonLevelBuilder::getDungeonLevel()
 {
     return _Dungeonlevel;
 }
 
 
-/*
- * Function getOppositeDirection uses to return the the opposite
- * direction depending on current direction in @param direction
- */
+
 Room::Direction DungeonLevelBuilder::getOppositeDirection(Room::Direction direction)
 {
     if (direction == Room::Direction::North){
@@ -88,11 +77,7 @@ Room::Direction DungeonLevelBuilder::getOppositeDirection(Room::Direction direct
 }
 
 
-/*
- * Function randomDouble is put in DungeonLevelBuilder to
- * both BasicDungeonLevelBuilder and MagicalDungeonLevelBuider
- * could inherit and use in their class
- */
+
 double DungeonLevelBuilder::randomDouble()
 {
     return _realDistribution(_randomGenerator);

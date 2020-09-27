@@ -13,7 +13,10 @@ public:
 
     std::string description() override;
 
-
+    /*
+     * Function isPassage is used to distinguish wall,
+     * entrance, exit (false) or a normal doorway (true)
+     */
     bool isPassage()override;
 
 };

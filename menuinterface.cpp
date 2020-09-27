@@ -6,11 +6,16 @@ using core::MenuInterface;
 using core::Game;
 
 MenuInterface::MenuInterface()
-{}
+{
+}
 
 MenuInterface::~MenuInterface()
-{}
+{
+}
 
+/*
+ * Set theInstance is nullptr to create new game when program start
+ */
 Game* Game::theInstance= nullptr;
 
 void MenuInterface::welcome(std::ostream &output, std::istream &input, std::string title, std::string author){

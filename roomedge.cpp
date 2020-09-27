@@ -4,7 +4,8 @@ using core::dungeon::RoomEdge;
 using core::dungeon::Room;
 
 RoomEdge::RoomEdge()
-{}
+{
+}
 
 RoomEdge::~RoomEdge()
 {

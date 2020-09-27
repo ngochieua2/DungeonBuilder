@@ -14,8 +14,10 @@ public:
 
     std::string description()override;
 
+    /*
+     * OpenDoorWay will not be entrance or exit
+     */
     void setEntrance() override;
-
     void setExit() override;
 
 };

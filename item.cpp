@@ -3,13 +3,16 @@
 using core::items::Item;
 
 Item::Item()
-{}
+{
+}
 
 Item::Item(std::string name) : _name{name}
-{}
+{
+}
 
 Item::~Item()
-{}
+{
+}
 
 void Item::setName(std::string name)
 {

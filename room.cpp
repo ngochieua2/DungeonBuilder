@@ -6,7 +6,8 @@ using core::dungeon::Room;
 using core::dungeon::RoomEdge;
 
 Room::Room()
-{}
+{
+}
 
 Room::Room(int id): _id{id}{
     EdgesVector.assign(4,_roomEdge);

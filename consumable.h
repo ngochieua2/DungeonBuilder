@@ -12,6 +12,9 @@ public:
     Consumable();
     ~Consumable();
 
+    /*
+     * Function clone uses to copy object of Consumable
+     */
     Consumable* clone() override;
 };
 

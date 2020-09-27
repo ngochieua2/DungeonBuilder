@@ -8,7 +8,6 @@ using core::dungeon::DungeonLevel;
 using core::dungeon::basic::BasicDungeonLevelBuilder;
 using core::dungeon::magical::MagicalDungeonLevelBuilder;
 
-
 Game::Game()
 {
 }
@@ -19,12 +18,6 @@ Game::~Game()
     delete dungeon;
 };
 
-
-/*
- * Function setDungeonType is used to create dungeon type
- * depending on players
- * @param type is symbol of dungeon type
- */
 void Game::setDungeonType(std::string type)
 {
     if (type == "b"){
@@ -35,12 +28,6 @@ void Game::setDungeonType(std::string type)
     }
 }
 
-
-/*
- * Function createExampleLevel will build the given example dungeon
- * the map will not be change but item and creature will appear randomly
- * with 60% chance for both
- */
 void Game::createExampleLevel()
 {
     //Set up for dungeon
@@ -102,12 +89,6 @@ void Game::createExampleLevel()
     }
 }
 
-
-/*
- * Function randomDoorwayType uses to select doorway type randomly
- * with 30% is locked door, 30% is impassable door and 40% is
- * traversable door
- */
 int Game::randomDoorwayType()
 {
     int randomValue = randomDouble();
@@ -151,19 +132,11 @@ int Game::randomDoorwayType()
     }
 }
 
-/*
- *
- * Random level can be divided into 2 cases:
- * - One is dungeon with 1 height
- * - And the rest with heigt < 2
- */
-
 void Game::createRandomLevel(std::string name, int width, int height, std::string type)
 {
     setDungeonType(type);
     _builder->buildungeonLevel(name, width , height);
     dungeon = _builder->getDungeonLevel();
-
 
     //build room with the given width and height
     for (int i = 0; i < dungeon->numberOfRooms();++i){

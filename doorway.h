@@ -15,11 +15,22 @@ public:
 
     char displayCharacter() override;
 
+    /*
+     * Function connect use to store infor of
+     * the door in opposite it connects with.
+     * With entrance and exit, they will not connect
+     * with anything, so their opposite will be nullptr.
+     * @param opposite is poiner of the door connect with
+     */
     void connect (Doorway *opposite);
 
     bool isEntrance() override;
     bool isExit() override;
 
+    /*
+     * Function isPassage is used to distinguish wall,
+     * entrance, exit (false) or a normal doorway (true)
+     */
     bool isPassage() override;
 
     void setEntrance() override;
