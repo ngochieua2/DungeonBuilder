@@ -8,7 +8,9 @@ namespace core::dungeon
 class Doorway : public RoomEdge
 {
 public:
+
     Doorway();
+
     ~Doorway();
 
     std::string description()override;
@@ -25,6 +27,7 @@ public:
     void connect (Doorway *opposite);
 
     bool isEntrance() override;
+
     bool isExit() override;
 
     /*

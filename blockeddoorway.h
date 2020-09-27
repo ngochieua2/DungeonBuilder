@@ -29,7 +29,6 @@ public:
 
     void setExit()override;
 
-
 };
 
 }

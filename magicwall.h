@@ -8,7 +8,9 @@ namespace core::dungeon::magical
 class MagicWall : public Wall
 {
 public:
+
     MagicWall();
+
     ~MagicWall();
 
     std::string description() override;

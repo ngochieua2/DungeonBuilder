@@ -18,6 +18,7 @@ namespace core::dungeon
 class DungeonLevelBuilder
 {
 public:
+
     /*
      * Constructor DungeonLevelBuilder will create monster,
      * weapon and consumable, so BasicDungeonLevelBuilder and
@@ -40,13 +41,13 @@ public:
      * So, they will be override in BasicDungeonLevelBuilder and
      * MagicalDungeonLevelBuilder. In this class, they could be empty
      */
-    virtual void buildungeonLevel(std::string name,int width, int height);
-    virtual std::shared_ptr<Room> buildRoom(int id);
-    virtual void builDoorway(std::shared_ptr<Room> origin, std::shared_ptr<Room> destination, Room::Direction direction, DungeonLevelBuilder::MoveConstraints constraints);
-    virtual void buildEntrance(std::shared_ptr<Room> room, Room::Direction direction);
-    virtual void buildExit(std::shared_ptr<Room> room, Room::Direction direction);
-    virtual void buildItem(std::shared_ptr<Room> room);
-    virtual void buildCreature(std::shared_ptr<Room> room);
+    virtual void buildungeonLevel(std::string name,int width, int height) = 0;
+    virtual std::shared_ptr<Room> buildRoom(int id) = 0;
+    virtual void builDoorway(std::shared_ptr<Room> origin, std::shared_ptr<Room> destination, Room::Direction direction, DungeonLevelBuilder::MoveConstraints constraints) = 0;
+    virtual void buildEntrance(std::shared_ptr<Room> room, Room::Direction direction) = 0;
+    virtual void buildExit(std::shared_ptr<Room> room, Room::Direction direction) = 0;
+    virtual void buildItem(std::shared_ptr<Room> room) = 0;
+    virtual void buildCreature(std::shared_ptr<Room> room) = 0;
 
     /*
      * Function getDungeonLevel uses to get the result or

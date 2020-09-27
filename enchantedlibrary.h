@@ -28,6 +28,7 @@ public:
      * include in 4 edges and monster and items
      */
     std::string description() override;
+
 };
 
 }

@@ -9,7 +9,9 @@ namespace core::creatures
 class Monster : public AbstractCreature
 {
 public:
+
     Monster();
+
     ~Monster();
 
     /*

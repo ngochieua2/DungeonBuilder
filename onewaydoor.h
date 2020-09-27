@@ -9,7 +9,9 @@ namespace core::dungeon::common
 class OneWayDoor: public Doorway
 {
 public:
+
     OneWayDoor();
+
     ~OneWayDoor();
 
     std::string description()override;
@@ -18,6 +20,7 @@ public:
      * OneWayDoor maybe entrance or exit or normal OneWayDoor
      */
     void setEntrance() override;
+
     void setExit() override;
 
 };

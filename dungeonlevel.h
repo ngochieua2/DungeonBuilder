@@ -11,9 +11,13 @@ namespace core::dungeon
 class DungeonLevel
 {
 public:
+
     DungeonLevel();
+
     DungeonLevel(std::string &name, int &width, int &height);
-    //DungeonLevel(const DungeonLevel &other) = default;
+
+    DungeonLevel(const DungeonLevel &other) = default;
+
     virtual ~DungeonLevel();
 
     /*

@@ -9,7 +9,9 @@ namespace core::dungeon::common
 class LockedDoor: public Doorway
 {
 public:
+
     LockedDoor();
+
     ~LockedDoor();
 
      std::string description()override;
@@ -17,8 +19,7 @@ public:
      char displayCharacter() override;
 
      /*
-      * if it is LockedDoor,
-      * it will not entrance or exit
+      * LockedDoor will not entrance or exit
       */
      void setEntrance()override;
 

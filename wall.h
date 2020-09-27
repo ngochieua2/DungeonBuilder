@@ -8,7 +8,9 @@ namespace core::dungeon{
 class Wall : public RoomEdge
 {
 public:
+
     Wall();
+
     ~Wall();
 
     std::string description() override;

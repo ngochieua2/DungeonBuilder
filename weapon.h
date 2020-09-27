@@ -8,9 +8,14 @@ namespace core::items{
 class Weapon : public Item
 {
 public:
+
     Weapon();
+
     ~Weapon();
 
+    /*
+     * Function clone uses to copy object of Weapon
+     */
     Weapon* clone() override;
 
 };

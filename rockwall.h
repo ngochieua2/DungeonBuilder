@@ -7,7 +7,9 @@ namespace core::dungeon::basic{
 class RockWall : public Wall
 {
 public:
+
     RockWall();
+
     ~RockWall();
 
     std::string description() override;
