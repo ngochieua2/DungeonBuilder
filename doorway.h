@@ -22,7 +22,7 @@ public:
      * the door in opposite it connects with.
      * With entrance and exit, they will not connect
      * with anything, so their opposite will be nullptr.
-     * @param opposite is poiner of the door connect with
+     * @param opposite is poiner of the door connect with.
      */
     void connect (Doorway *opposite);
 
@@ -32,7 +32,7 @@ public:
 
     /*!
      * Function isPassage is used to distinguish wall,
-     * entrance, exit (false) or a normal doorway (true)
+     * entrance, exit (false) or a normal doorway (true).
      */
     bool isPassage() override;
 

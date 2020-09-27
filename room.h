@@ -27,13 +27,13 @@ public:
 
     /*!
      * Destructor Room is used to delete null pointer _roomedge
-     * and delete all members of EdgesVector
+     * and delete all members of EdgesVector.
      */
     ~Room();
 
     /*!
      * Function description will be overrided into other class roomtype
-     * so, this virtual function maybe empty
+     * so, this virtual function maybe empty.
      */
     virtual std::string description();
 
@@ -53,18 +53,18 @@ public:
     };
 
     /*!
-     * Function setEdge uses to set objects into vector roomedge
+     * Function setEdge uses to set objects into vector roomedge.
      * Each direction will have specific index in that vector
-     * namely, North is 0, East is 1, South is 2 and West is 3
-     * @param edge is value will be store in vector
-     * @param direction is used as index to store in vector
+     * namely, North is 0, East is 1, South is 2 and West is 3.
+     * @param edge is value will be store in vector.
+     * @param direction is used as index to store in vector.
      */
     void setEdge(RoomEdge *edge, Direction direction);
 
     /*!
      * Function edgeAt will return value in vector roomedge
      * depending on index as direction.
-     * @param direction is used as index to access into vectors
+     * @param direction is used as index to access into vectors.
      */
     RoomEdge* edgeAt(Direction direction);
 
@@ -73,39 +73,39 @@ public:
     /*!
      * Function creatureDescription uses to check data member creature
      * before return it. If creature is nullptr, function will returen
-     * different message
+     * different message.
      */
     std::string creatureDescription();
 
     /*!
      * Function itemDescription uses to check data member item
      * before return it. If item is nullptr, function will returen
-     * different message
+     * different message.
      */
     std::string itemDescription();
 
     /*!
      * Function display uses to collect all necassary characters
      * and create a string to store them. Each string will be a row,
-     * then pushing them into a string vector
+     * then pushing them into a string vector.
      */
     std::vector<std::string> display();
 
     /*!
      * Function doorwayCount uses to count the number of door in
-     * this room and return it value. It will exclude entrance and exit
+     * this room and return it value. It will exclude entrance and exit.
      */
     int doorwayCount();
 
     /*!
      * Function hasEntrance uses to check this room have
-     * entrance (true) or not(false)
+     * entrance (true) or not(false).
      */
     bool hasEntrance();
 
     /*!
      * Function hasExit uses to check this room have
-     * exit (true) or not(false)
+     * exit (true) or not(false).
      */
     bool hasExit();
 

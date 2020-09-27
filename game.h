@@ -18,7 +18,7 @@ public:
 
     /*!
      * Function getInstance is used to create new game
-     * or access to game
+     * or access to game.
      */
     static Game* getInstance(){
         if (theInstance == nullptr){
@@ -29,37 +29,37 @@ public:
 
     /*!
      * Function setDungeonType is used to create dungeon type
-     * depending on players
-     * @param type is symbol of dungeon type
+     * depending on players.
+     * @param type is symbol of dungeon type.
      */
     void setDungeonType(std::string type);
 
     /*!
      * Function createExampleLevel will build the given example dungeon
      * the map will not be change but item and creature will appear randomly
-     * with 60% chance for both
+     * with 60% chance for both.
      */
     void createExampleLevel();
 
     /*!
      * Function randomDoorwayType uses to select doorway type randomly
      * with 30% is locked door, 30% is impassable door and 40% is
-     * traversable door
+     * traversable door.
      */
     int randomDoorwayType();
 
     /*!
      * Random level can be divided into 2 cases:
-     * - One is dungeon with 1 height, 1 row or both
-     * - And the rest with heigt > 1 and row > 1
+     * - One is dungeon with 1 height, 1 row or both.
+     * - And the rest with heigt > 1 and row > 1.
      * @param name, width, height and type are necessary information
-     * to create new dungeonLevel
+     * to create new dungeonLevel.
      */
     void createRandomLevel(std::string name, int width, int height, std::string type);
 
     /*!
      * Function displayLevel uses to show the dungeon map
-     * on screen
+     * on screen.
      */
     void displayLevel(std::ostream &display);
 
@@ -71,7 +71,7 @@ public:
 
     /*!
      * Function getDungeon uses to access created dungeon
-     * after building
+     * after building.
      */
     core::dungeon::DungeonLevel* getDungeon();
 

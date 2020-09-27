@@ -19,19 +19,19 @@ public:
     virtual std::string description();
 
     /*!
-     * Function setChar uses to access value of data member character
+     * Function setChar uses to access value of data member character.
      * Depending direction and object roomedge type, it will be have
-     * different character
-     * @param char is value to set
+     * different character.
+     * @param char is value to set.
      */
     void setChar(char sChar);
 
     virtual char displayCharacter();
 
     /*!
-     * Function is Passage is used to check what roomedge type
+     * Function is Passage is used to check what roomedge type.
      * Because it is virtual function, it will be overrided in
-     * other class like wall or doorway
+     * other class like wall or doorway.
      */
     virtual bool isPassage();
 

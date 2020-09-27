@@ -208,7 +208,7 @@ void BasicDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
     }
 
     /*!
-     * There are three monsters type in Basic dungeon level
+     * There are three monsters type in Basic dungeon level.
      * - Goblin (1/3 chance)
      * - Werewolf (1/3 chance)
      * - Evil Wizard (1/3 chance)

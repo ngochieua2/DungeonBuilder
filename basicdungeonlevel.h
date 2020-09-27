@@ -12,9 +12,9 @@ public:
 
     /*!
      * Constructor BasicDungeonLevel use to use basic information to build
-     * a BasicDungeonLevel
+     * a BasicDungeonLevel.
      * @param name, width, height are name of dungeon, number of columns and
-     * number of rows, respectively
+     * number of rows, respectively.
      */
     BasicDungeonLevel(std::string name, int width, int height);
 
