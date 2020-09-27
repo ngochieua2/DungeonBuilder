@@ -1,5 +1,4 @@
 #include "game.h"
-//#include<string>
 
 using core::Game;
 using core::dungeon::Room;

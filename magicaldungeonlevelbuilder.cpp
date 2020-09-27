@@ -143,14 +143,6 @@ void MagicalDungeonLevelBuilder::buildExit(std::shared_ptr<Room> room, Room::Dir
     room->setEdge(_door,direction);
 }
 
-/*
- * there is 65% chance that the Item is a Consumable and a 35% chance that it is a Weapon.
- * Random number range is 0.0 to 6.0
- * So, when random number < 6*35% = 2.1, weapon will appear in this room
- * And the remaining random number will respond consumable
- * Only a weapon or a consumable can appear in a room
- */
-
 void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
 {
     double value{0};
@@ -201,11 +193,6 @@ void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
     }
 }
 
-/*
- * Only one monster can appear in a room
- * The room with exit, if monster appear on it,
- * it will be a boss, so it is necessary to check having a exit or not
- */
 void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
 {
     //set boss if this room has exit

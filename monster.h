@@ -14,7 +14,7 @@ public:
 
     ~Monster();
 
-    /*
+    /*!
      * Function clone uses to copy object of Monster
      */
     Monster *clone() override;

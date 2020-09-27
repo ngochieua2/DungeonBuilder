@@ -16,7 +16,7 @@ public:
 
     std::string description()override;
 
-    /*
+    /*!
      * OneWayDoor maybe entrance or exit or normal OneWayDoor
      */
     void setEntrance() override;

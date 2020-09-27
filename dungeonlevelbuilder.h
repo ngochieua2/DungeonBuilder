@@ -19,7 +19,7 @@ class DungeonLevelBuilder
 {
 public:
 
-    /*
+    /*!
      * Constructor DungeonLevelBuilder will create monster,
      * weapon and consumable, so BasicDungeonLevelBuilder and
      * MagicDungeonBuilder can be free to use it, set attritude
@@ -27,7 +27,7 @@ public:
      */
     DungeonLevelBuilder();
 
-    /*
+    /*!
      * Destructor DungeonLevelBuilder will delete all pointers
      * include in monster, weapon, consumable and dungeonLevel
      */
@@ -35,7 +35,7 @@ public:
 
     enum class MoveConstraints : unsigned;
 
-    /*
+    /*!
      * buildungeonLevel, buildRoom, builDoorway, buildEntrance,
      * buildExit, buildItem, buildCreature is virtual function
      * So, they will be override in BasicDungeonLevelBuilder and
@@ -49,7 +49,7 @@ public:
     virtual void buildItem(std::shared_ptr<Room> room) = 0;
     virtual void buildCreature(std::shared_ptr<Room> room) = 0;
 
-    /*
+    /*!
      * Function getDungeonLevel uses to get the result or
      * product after building in builder design
      */
@@ -63,13 +63,13 @@ public:
         DestinationLocked = 8,
     };
 
-    /*
+    /*!
      * Function getOppositeDirection uses to return the the opposite
      * direction depending on current direction in @param direction
      */
     Room::Direction getOppositeDirection(Room::Direction direction);
 
-    /*
+    /*!
      * Function randomDouble is put in DungeonLevelBuilder to
      * both BasicDungeonLevelBuilder and MagicalDungeonLevelBuider
      * could inherit and use in their class

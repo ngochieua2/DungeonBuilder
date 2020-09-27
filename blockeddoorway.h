@@ -14,7 +14,7 @@ public:
 
     std::string description()override;
 
-    /*
+    /*!
      * Function displayCharacter use to print correct character
      * In this case, it will need to check the opposite doorway is onewaydoor
      * or not. if yes, it will print character of onewaydoor
@@ -22,7 +22,7 @@ public:
      */
     char displayCharacter() override;
 
-    /*
+    /*!
      * BlockedDoorway will not be entrance or exit
      */
     void setEntrance() override;

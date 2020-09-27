@@ -17,7 +17,7 @@ public:
 
     char displayCharacter() override;
 
-    /*
+    /*!
      * Function connect use to store infor of
      * the door in opposite it connects with.
      * With entrance and exit, they will not connect
@@ -30,7 +30,7 @@ public:
 
     bool isExit() override;
 
-    /*
+    /*!
      * Function isPassage is used to distinguish wall,
      * entrance, exit (false) or a normal doorway (true)
      */

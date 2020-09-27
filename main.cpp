@@ -6,8 +6,8 @@ using namespace std;
 
 using core::MenuInterface;
 
-/*
- * @mainpage
+/*!
+ * @mainpage to run the game
  */
 
 int main()

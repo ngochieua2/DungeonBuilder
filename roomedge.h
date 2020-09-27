@@ -18,7 +18,7 @@ public:
 
     virtual std::string description();
 
-    /*
+    /*!
      * Function setChar uses to access value of data member character
      * Depending direction and object roomedge type, it will be have
      * different character
@@ -28,7 +28,7 @@ public:
 
     virtual char displayCharacter();
 
-    /*
+    /*!
      * Function is Passage is used to check what roomedge type
      * Because it is virtual function, it will be overrided in
      * other class like wall or doorway

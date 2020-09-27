@@ -65,8 +65,8 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
         }
         output << "How many rows in *"+name+"*?" << std::endl;
         input >> height;
-        while (input.fail() ||height > 4 || height < 1 || height - (int)height == 0) {
-            output << "input should be a number in range 1 to 4 and no space in input, please enter again!" << std::endl;
+        while (input.fail() ||height > 4 || height < 1) {
+            output << "input should be a number in range 1 to 4!" << std::endl;
             output << "How many rows in *"+name+"*?" << std::endl;
             input.clear();
             input.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -74,8 +74,8 @@ bool MenuInterface::mainMenu(std::ostream &output, std::istream &input){
         }
         output << "How many columns in *"+name+"*?" << std::endl;
         input >> width;
-        while (input.fail() ||width > 4 || width < 1 || width - (int)width == 0) {
-            output << "input should be a number in range 1 to 4 and no space in input, please enter again!" << std::endl;
+        while (input.fail() ||width > 4 || width < 1 ) {
+            output << "input should be a number in range 1 to 4!" << std::endl;
             output << "How many columns in *"+name+"*?" << std::endl;
             input.clear();
             input.ignore(std::numeric_limits<std::streamsize>::max(), '\n');

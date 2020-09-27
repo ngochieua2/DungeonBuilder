@@ -10,14 +10,14 @@ public:
 
     Item();
 
-    /*
+    /*!
      * Constructor is used to get name of monster when create new monster object
-     * @param name is variable to get name of monster directly and store it into
-     * data member _name
      * However, in this assignment, it will not be used because it will required
      * declare many same objects with different name and then clone it. So that,
      * to achieve prototype design, I decide to avoid calling as many similar objects
      * as possible.
+     * @param name is variable to get name of monster directly and store it into
+     * data member _name
      */
     Item(std::string name);
 

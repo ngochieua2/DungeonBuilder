@@ -13,7 +13,7 @@ public:
 
     ~Weapon();
 
-    /*
+    /*!
      * Function clone uses to copy object of Weapon
      */
     Weapon* clone() override;
