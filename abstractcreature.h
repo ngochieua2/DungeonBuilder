@@ -56,12 +56,6 @@ public:
      */
     void setBoss(bool value);
 
-    /*
-     * Function isBoss uses to check the monster is boss or not
-     * It will be used when display * symbol in dungeon map
-     */
-    bool isBoss();
-
 protected:
     std::string _name{};
     bool Boss{false};

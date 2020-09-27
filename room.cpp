@@ -140,10 +140,6 @@ RoomEdge* Room::edgeAt(Direction direction){
     }
 }
 
-//RoomEdge* Room::getRoomEdge(){
-//    return _roomEdge;
-//}
-
 std::string Room::edgeDescription(Room::Direction direction)
 {
     return edgeAt(direction)->description();
@@ -226,7 +222,7 @@ std::vector<std::string> Room::display()
                     }
                 }
                 else if (j == 5) {
-                    if(_abstractCreature != nullptr && creature()->isBoss()){
+                    if(_abstractCreature != nullptr && hasExit()){
                         row.push_back('*');
                     }
                     else {

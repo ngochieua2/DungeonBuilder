@@ -240,7 +240,7 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
          * The room with the entrance must not have a Monster nor an Item
          */
          for(int i = 1; i<= width*height; ++i){
-            if(dungeon->retrieveRoom(i)->hasExit() && dungeon->retrieveRoom(i)->hasEntrance())
+            if(dungeon->retrieveRoom(i)->hasExit())
             {
                 _builder->buildCreature(dungeon->retrieveRoom(i));
                 _builder->buildItem(dungeon->retrieveRoom(i));
@@ -248,11 +248,6 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
             else if(dungeon->retrieveRoom(i)->hasEntrance()) // find the room has entrance
             {
                 // donot build monster and item
-            }
-            if(dungeon->retrieveRoom(i)->hasExit()) // find the room has item
-            {
-                _builder->buildCreature(dungeon->retrieveRoom(i));
-                _builder->buildItem(dungeon->retrieveRoom(i));
             }
             else // the remaining room
             {
@@ -322,13 +317,13 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 1) // build at least one doorway
                 {
                     //build doorway at East
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::East)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at south
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::South)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -340,13 +335,13 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 1) // build at least one doorway
                 {
                     //build doorway at West
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::West)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at South
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::South)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -358,13 +353,13 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 1) // build at least one doorway
                 {
                     //build doorway at East
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::East)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at North
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::North)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -376,13 +371,13 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 1) // build at least one doorway
                 {
                     //build doorway at West
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::West)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at North
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::North)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -394,19 +389,19 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
                 {
                     //build doorway at West
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::West)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at South
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::South)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at East
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::East)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -418,19 +413,19 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
                 {
                     //build doorway at West
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::West)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at North
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::North)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at East
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::East)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -442,19 +437,19 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
                 {
                     //build doorway at South
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::South)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at North
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::North)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at East
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::East)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -466,19 +461,19 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
                 {
                     //build doorway at South
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::South)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at North
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::North)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at West
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::West)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -490,25 +485,25 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
                 while (dungeon->retrieveRoom(i)->doorwayCount() < 2) // build at least two doorway
                 {
                     //build doorway at South
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::South)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+width),Room::Direction::South,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at North
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::North)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-width),Room::Direction::North,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at West
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::West)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i-1),Room::Direction::West,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
                     }
                     //build doorway at East
-                    if(randomDouble() <= 50) //50% doorway will be build in this side
+                    if(randomDouble() <= 50 && !dungeon->retrieveRoom(i)->edgeAt(Room::Direction::East)->isPassage()) //50% doorway will be build in this side
                     {
                         _builder->builDoorway(dungeon->retrieveRoom(i), dungeon->retrieveRoom(i+1),Room::Direction::East,
                                               static_cast<DungeonLevelBuilder::MoveConstraints>(randomDoorwayType()));
@@ -537,7 +532,7 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
             }
             else // the remaining room
             {
-                if(randomDouble() <= 100){
+                if(randomDouble() <= 25){
                     _builder->buildCreature(dungeon->retrieveRoom(i));
                 }
                 if(randomDouble() <= 35){
@@ -546,7 +541,6 @@ void Game::createRandomLevel(std::string name, int width, int height, std::strin
             }
          }
     }
-
 }
 
 void Game::displayLevel(std::ostream &display)

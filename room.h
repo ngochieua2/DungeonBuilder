@@ -109,11 +109,11 @@ public:
     bool hasExit();
 
 protected:
-    int _id{NULL};
+    int _id{};
 
     RoomEdge *_roomEdge{nullptr};
 
-    std::vector <std::string> roomMap{NULL};
+    std::vector <std::string> roomMap{};
 
     std::vector <RoomEdge*> EdgesVector{nullptr};
 
