@@ -148,7 +148,7 @@ void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
     double value{0};
 
     if (randomDouble() <= 2.1)
-    /*
+    /*!
      * A weapon may appears in this room, including:
      * - Wizard's staff (1/2 chance)
      * - Magic Wand (1/2 chance)
@@ -167,7 +167,7 @@ void MagicalDungeonLevelBuilder::buildItem(std::shared_ptr<Room> room)
         }
     }
     else
-    /*
+    /*!
      * A consumable may appears in this room, including:
      * - Heath Potion (1/3 chance)
      * - Molotov Cocktail (1/3 chance)
@@ -201,7 +201,7 @@ void MagicalDungeonLevelBuilder::buildCreature(std::shared_ptr<Room> room)
         aMonster->setBoss(true);
     }
 
-    /*
+    /*!
      * There are three monsters type in Basic dungeon level
      * - Goblin (1/3 chance)
      * - Dragon (1/3 chance)

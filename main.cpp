@@ -7,7 +7,9 @@ using namespace std;
 using core::MenuInterface;
 
 /*!
- * @mainpage to run the game
+ * @mainpage
+ * This game allows to generate random map with specific name, width, height
+ * and type. all doorways, entrance, exit,creatures and items can appear randomly
  */
 
 int main()
