@@ -5,7 +5,7 @@ Each dungeon level will comprise a set of rooms, connected by doors, with the po
 The items and monsters will display on some rooms, but they will not be completely game capable.
 A text-based menu will allow the user to generate dungeon levels with a small set of parameters and display them to the console.
 
-This project is created according to object-oriented design, some design pattern 
+This project is created according to object-oriented design, some design pattern and 
 use some C++ features such as: class inheritance and polymorphism, dynamic memory allocation, and smart pointers
 
 ## Design Patterns:
@@ -42,7 +42,7 @@ A chamber that glitters like a thousand stars in the torchlight. (Quartz Chamber
 
 ### Viewing a Dungeon Level
 
-Each room MUST be displayed as an 11x5 square of characters using the '-' (hyphen) character for the North/South edges, and the character '|' (pipe) for the East/West edges, and the character '+' (plus) at the corners.
+Each room is displayed as an 11x5 square of characters using the '-' (hyphen) character for the North/South edges, and the character '|' (pipe) for the East/West edges, and the character '+' (plus) at the corners.
 
 ![Room](https://res.cloudinary.com/ngochieua2/image/upload/v1621419309/github/room_bqph8u.png)
 
@@ -59,21 +59,21 @@ Other components will have different shape, include in:
 
 ### Generating a Dungeon Level Randomly
 
-Before creating a Dungeon randomly, user must enter some information like: name, type (basic or magical) and size (width and height)(must be in the range 1-4)
+Before creating a Dungeon randomly, user will enter some information like: name, type (basic or magical) and size (width and height)(must be in the range 1-4)
 
 Some rule when generating randomly
-* The entrance (In doorway) to the random dungeon level MUST be in one of the rooms of the first row.
-* The exit (Out doorway) from the random dungeon level MUST be in one of the rooms of the last row.
+* The entrance (In doorway) to the random dungeon level is in one of the rooms of the first row.
+* The exit (Out doorway) from the random dungeon level is in one of the rooms of the last row.
 * The entrance and the exit may be added to any edge (choose one at random) that cannot be connected to another room.
-* Doorways MUST be added to each room randomly according to the following rules:
-  * Each non-corner room MUST have at least two doorways (including the entrance and exit): this helps reduce the chances of degenerate dungeon levels that do not have a path from beginning to end.
-  * Each corner room MUST have at least one doorway (excluding the entrance and exit): this prevents corner rooms from almost always being connected to both neighbouring rooms.
+* Doorways are added to each room randomly according to the following rules:
+  * Each non-corner room has at least two doorways (including the entrance and exit): this helps reduce the chances of degenerate dungeon levels that do not have a path from beginning to end.
+  * Each corner room has at least one doorway (excluding the entrance and exit): this prevents corner rooms from almost always being connected to both neighbouring rooms.
   * There is a 40% chance that an individual doorway is traversable, 30% chance that it is locked, and 30% chance that it is impassable.
 * Rooms may contains Monsters and/or Items under the following conditions:
   * There is a 25% chance that a room will contain a Monster.
   * There is a 35% chance that a room will contain an Item: 65% chance that the Item is a Consumable and a 35% chance that it is a Weapon.
-  * The room with the exit MUST ALWAYS contain a Monster (that is a 'boss') and an Item.
-  * The room with the entrance MUST NOT have a Monster NOR an Item; except if the room also contains the exit.
+  * The room with the exit is always contain a Monster (that is a 'boss') and an Item.
+  * The room with the entrance does not have a Monster NOR an Item; except if the room also contains the exit.
 
 ### Expected Result
 
