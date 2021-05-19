@@ -20,7 +20,7 @@ use some C++ features such as: class inheritance and polymorphism, dynamic memor
 
 ## Features:
 
-### Describing a Dungeon and its Components:
+### Describing a Dungeon and its Components
 
 It will show information of a Dungeon level or a selected room after a Dungeon is created
 
@@ -57,7 +57,7 @@ Other components will have different shape, include in:
 * Loot item: L (capital 'l')
 * Walls (all types): - (hyphen) or | (pipe) for North/South and East/West directions, respectively
 
-### Generating a Dungeon Level Randomly:
+### Generating a Dungeon Level Randomly
 
 Before creating a Dungeon randomly, user must enter some information like: name, type (basic or magical) and size (width and height)(must be in the range 1-4)
 
@@ -74,6 +74,10 @@ Some rule when generating randomly
   * There is a 35% chance that a room will contain an Item: 65% chance that the Item is a Consumable and a 35% chance that it is a Weapon.
   * The room with the exit MUST ALWAYS contain a Monster (that is a 'boss') and an Item.
   * The room with the entrance MUST NOT have a Monster NOR an Item; except if the room also contains the exit.
+
+### Expected Result
+
+![ex map](https://res.cloudinary.com/ngochieua2/image/upload/v1621422086/github/exmap_xckayg.png)
 
 ## Component Description:
 
@@ -115,6 +119,8 @@ There are several monster types that may be chosen randomly to populate the dung
 * Werewolf
 * Evil Wizard
 * Dragon
+
+In the room have exit, monster will become boss
 
 ###  A Dungeon Level
 
